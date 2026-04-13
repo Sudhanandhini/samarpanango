@@ -1,14 +1,16 @@
 import PageHero from '../components/PageHero'
 import { FileText, Download, Calendar, Eye } from 'lucide-react'
+import report1 from "../assets/annual/SDO-annual-2024-25.pdf"
+import report2 from "../assets/annual/SDO-annual-2024-25.pdf"
+import report3 from "../assets/annual/SDO-annual-2024-25.pdf"
 
 const reports = [
   {
     category: 'Annual Reports',
     items: [
-      { title: 'Annual Report 2023–24', size: '4.2 MB', date: 'April 2024', type: 'PDF' },
-      { title: 'Annual Report 2022–23', size: '3.8 MB', date: 'April 2023', type: 'PDF' },
-      { title: 'Annual Report 2021–22', size: '3.5 MB', date: 'April 2022', type: 'PDF' },
-      { title: 'Annual Report 2020–21', size: '3.1 MB', date: 'April 2021', type: 'PDF' },
+      { title: 'Annual Report 2024–25', date: 'April 2025', type: 'PDF', file: report1 },
+      { title: 'Annual Report 2023–24', date: 'April 2024', type: 'PDF', file: report2 },
+      { title: 'Annual Report 2022–23', date: 'April 2023', type: 'PDF', file: report3 },
     ],
   },
   {
@@ -76,17 +78,41 @@ export default function Reports() {
                       <h4 className="font-medium text-gray-800 text-sm truncate">{item.title}</h4>
                       <div className="flex items-center gap-3 mt-1">
                         <span className="flex items-center gap-1 text-xs text-gray-400"><Calendar size={11} /> {item.date}</span>
-                        <span className="text-xs text-gray-400">{item.size}</span>
+                        {item.size && <span className="text-xs text-gray-400">{item.size}</span>}
                         <span className="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full">{item.type}</span>
                       </div>
                     </div>
                     <div className="flex gap-2 shrink-0">
-                      <button className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-gray-500">
-                        <Eye size={14} />
-                      </button>
-                      <button className="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center hover:bg-accent hover:text-white transition-colors text-accent">
-                        <Download size={14} />
-                      </button>
+                      {item.file ? (
+                        <>
+                          <a
+                            href={item.file}
+                            target="_blank"
+                            rel="noreferrer"
+                            title="View PDF"
+                            className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-gray-500"
+                          >
+                            <Eye size={14} />
+                          </a>
+                          <a
+                            href={item.file}
+                            download
+                            title="Download PDF"
+                            className="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center hover:bg-accent hover:text-white transition-colors text-accent"
+                          >
+                            <Download size={14} />
+                          </a>
+                        </>
+                      ) : (
+                        <>
+                          <button disabled className="w-8 h-8 bg-gray-50 rounded-lg flex items-center justify-center text-gray-300 cursor-not-allowed">
+                            <Eye size={14} />
+                          </button>
+                          <button disabled className="w-8 h-8 bg-gray-50 rounded-lg flex items-center justify-center text-gray-300 cursor-not-allowed">
+                            <Download size={14} />
+                          </button>
+                        </>
+                      )}
                     </div>
                   </div>
                 ))}

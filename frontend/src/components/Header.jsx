@@ -137,13 +137,21 @@ export default function Header() {
           </div>
           <div className="flex items-center gap-2.5">
             <span className="text-gray-400 text-[11px] mr-1 tracking-wide">Follow Us</span>
-            {['fb', 'tw', 'ig', 'yt'].map(s => (
+            {[
+              { platform: 'fb', href: 'https://www.facebook.com/samarpanango',  label: 'Facebook'  },
+              { platform: 'tw', href: 'https://twitter.com/samarpanango',        label: 'Twitter'   },
+              { platform: 'ig', href: 'https://www.instagram.com/samarpanango', label: 'Instagram' },
+              { platform: 'yt', href: 'https://www.youtube.com/@vilask7880',     label: 'YouTube'   },
+            ].map(s => (
               <a
-                key={s}
-                href="#"
+                key={s.platform}
+                href={s.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={s.label}
                 className="w-6 h-6 bg-primary-light/60 border border-white/10 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent transition-all duration-200 text-white"
               >
-                <SocialIcon platform={s} />
+                <SocialIcon platform={s.platform} />
               </a>
             ))}
           </div>
