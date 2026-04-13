@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: #1a1a1a;
+  background: #fff;
+}
+
+html { scroll-behavior: smooth; }
+
+.wavy-bottom {
+  position: relative;
+}
+.wavy-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 55px;
+  background: white;
+  clip-path: polygon(0 60%, 4% 30%, 8% 55%, 12% 20%, 16% 50%, 20% 15%, 24% 45%, 28% 10%, 32% 40%, 36% 8%, 40% 38%, 44% 5%, 48% 32%, 52% 2%, 56% 28%, 60% 5%, 64% 32%, 68% 8%, 72% 38%, 76% 12%, 80% 40%, 84% 15%, 88% 42%, 92% 18%, 96% 45%, 100% 22%, 100% 100%, 0% 100%);
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-light transition-all duration-200 inline-flex items-center gap-2 cursor-pointer;
+  }
+  .btn-outline {
+    @apply border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition-all duration-200 inline-flex items-center gap-2;
+  }
+  .section-tag {
+    @apply inline-block border border-primary text-primary text-xs font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-widest;
+  }
+  .section-title {
+    @apply font-heading text-3xl md:text-4xl font-bold text-primary-dark leading-tight;
+  }
+}
