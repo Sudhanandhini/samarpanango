@@ -21,7 +21,7 @@ export default function Contact() {
       />
 
       <section className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-3 gap-10">
+        <div className="grid lg:grid-cols-3 gap-10 items-start">
           {/* Left: Info cards */}
           <div className="space-y-5">
             <div>
@@ -51,12 +51,12 @@ export default function Contact() {
                 lines: ['samarpana2000@gmail.com'],
                 color: 'bg-green-600',
               },
-              {
-                icon: Clock,
-                label: 'Office Hours',
-                lines: ['Mon–Sat: 9:00 AM – 6:00 PM', 'Sunday: Closed'],
-                color: 'bg-purple-600',
-              },
+              // {
+              //   icon: Clock,
+              //   label: 'Office Hours',
+              //   lines: ['Mon–Sat: 9:00 AM – 6:00 PM', 'Sunday: Closed'],
+              //   color: 'bg-purple-600',
+              // },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
                 <div className={`w-12 h-12 ${item.color} rounded-2xl flex items-center justify-center shrink-0`}>
@@ -167,20 +167,17 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Map embed (placeholder) */}
-        <div className="mt-12 rounded-3xl overflow-hidden shadow-lg border border-gray-100 h-72 bg-gray-100 flex items-center justify-center">
-          <div className="text-center">
-            <MapPin size={32} className="text-primary mx-auto mb-3" />
-            <p className="text-gray-500 text-sm font-medium">Samarpana NGO – Bangalore, Karnataka, India</p>
-            <a
-              href="https://maps.google.com/?q=Bangalore+Karnataka+India"
-              target="_blank"
-              rel="noreferrer"
-              className="text-accent text-sm font-semibold hover:underline mt-2 inline-block"
-            >
-              Open in Google Maps →
-            </a>
-          </div>
+        {/* Map embed */}
+        <div className="mt-6 rounded-3xl overflow-hidden shadow-lg border border-gray-100 h-96">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2284.6635833440805!2d76.7807641!3d15.7810196!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb7eb52e5c2b993%3A0xdaab26da382c5a1d!2sAshakiran%20poor%20and%20orphan%20childrens%20hostel!5e1!3m2!1sen!2sau!4v1776066938348!5m2!1sen!2sau"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </section>
     </div>

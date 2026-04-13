@@ -94,7 +94,7 @@ export default function Footer() {
           </ul>
 
           {/* Newsletter */}
-          <div className="mt-6">
+          {/* <div className="mt-6">
             <p className="text-gray-400 text-xs mb-3">Subscribe to our newsletter</p>
             <div className="flex">
               <input
@@ -106,7 +106,7 @@ export default function Footer() {
                 Go
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -117,9 +117,9 @@ export default function Footer() {
             © {new Date().getFullYear()} Samarpana NGO. All rights reserved.
           </p>
           <div className="flex gap-4 text-xs text-gray-500">
-            <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-accent transition-colors">Terms of Use</a>
-            <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
+
+            <a href="https://www.sunsys.in" className="hover:text-accent transition-colors">Developed by Sunsys Technologies</a>
+       
           </div>
         </div>
       </div>
