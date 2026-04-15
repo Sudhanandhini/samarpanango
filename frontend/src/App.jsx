@@ -24,6 +24,7 @@ export default function App() {
             <Route path="/about/:section" element={<About />} />
             <Route path="/programs" element={<Programs />} />
             <Route path="/programs/:type" element={<Programs />} />
+            <Route path="/programs/:type/:subtype" element={<Programs />} />
             <Route path="/partners" element={<ProjectPartners />} />
             <Route path="/reports" element={<Reports />} />
             <Route path="/get-involved" element={<GetInvolved />} />

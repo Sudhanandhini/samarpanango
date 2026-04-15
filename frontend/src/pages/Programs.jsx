@@ -9,6 +9,13 @@ const programTypes = {
     color: 'bg-blue-500',
     desc: 'Our education programs ensure that every child, regardless of socioeconomic background, has access to quality education.',
     image: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&q=80',
+    stats: [
+      { label: 'Students Supported', value: '3,200+' },
+      { label: 'Schools Reached', value: '45' },
+      { label: 'Scholarships Awarded', value: '850+' },
+      { label: 'Districts Covered', value: '8' },
+    ],
+    impact: 'Through sustained interventions, we have reduced school dropout rates by 38% in our target communities and increased girl child enrollment by 52% over five years.',
     activities: [
       'Scholarship programs for meritorious students from low-income families',
       'Bridge course programs for school dropouts',
@@ -24,6 +31,13 @@ const programTypes = {
     color: 'bg-pink-500',
     desc: 'We empower women through skill training, SHG formation, awareness programs, and economic opportunities.',
     image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80',
+    stats: [
+      { label: 'Women Empowered', value: '5,800+' },
+      { label: 'SHGs Formed', value: '210' },
+      { label: 'Skill Training Batches', value: '320+' },
+      { label: 'Microloans Disbursed', value: '₹2.4 Cr' },
+    ],
+    impact: 'Our SHG network has enabled women to access microfinance, start small businesses, and achieve financial independence, lifting over 1,200 families above the poverty line.',
     activities: [
       'Self Help Group (SHG) formation and capacity building',
       'Vocational skill training (tailoring, handicrafts, food processing)',
@@ -39,6 +53,13 @@ const programTypes = {
     color: 'bg-green-500',
     desc: 'Our health programs bring essential medical services and health awareness to communities with limited healthcare access.',
     image: 'https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=800&q=80',
+    stats: [
+      { label: 'Patients Treated', value: '28,000+' },
+      { label: 'Medical Camps Held', value: '180+' },
+      { label: 'Villages Covered', value: '300+' },
+      { label: 'Health Workers Trained', value: '420' },
+    ],
+    impact: 'Our mobile medical camps have provided life-saving treatment to over 28,000 patients in remote villages, reducing maternal mortality rates and improving child nutrition outcomes.',
     activities: [
       'Mobile medical camps in remote villages',
       'Maternal and child health programs',
@@ -54,6 +75,13 @@ const programTypes = {
     color: 'bg-orange-500',
     desc: 'We provide vocational training and skill development to unemployed youth and adults, enabling sustainable livelihoods.',
     image: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=800&q=80',
+    stats: [
+      { label: 'Youth Trained', value: '4,100+' },
+      { label: 'Placed in Jobs', value: '2,600+' },
+      { label: 'Training Centers', value: '12' },
+      { label: 'Industry Partners', value: '35+' },
+    ],
+    impact: 'With a placement rate of over 63%, our skill development program has transformed the economic prospects of thousands of young people across rural Karnataka.',
     activities: [
       'Vocational training in construction, plumbing, and electrical work',
       'Computer and digital literacy courses',
@@ -69,6 +97,13 @@ const programTypes = {
     color: 'bg-purple-500',
     desc: 'We strengthen communities through infrastructure development, environment protection, and social cohesion initiatives.',
     image: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=80',
+    stats: [
+      { label: 'Villages Developed', value: '150+' },
+      { label: 'Trees Planted', value: '80,000+' },
+      { label: 'Sanitation Units Built', value: '1,200+' },
+      { label: 'Tribal Families Supported', value: '3,500+' },
+    ],
+    impact: 'Our community-led development model has transformed 150+ villages through clean water access, sanitation infrastructure, and environmental restoration covering over 2,000 acres.',
     activities: [
       'Rural infrastructure development (roads, sanitation, water)',
       'Environment awareness and plantation drives',
@@ -110,7 +145,87 @@ const subNavPrograms = [
 ]
 
 export default function Programs() {
-  const { type } = useParams()
+  const { type, subtype } = useParams()
+
+  // Sub-program detail via /programs/ongoing/:subtype
+  const subTypes = Object.keys(programTypes)
+  const resolvedSubtype = subtype || (subTypes.includes(type) ? type : null)
+  if (resolvedSubtype && subTypes.includes(resolvedSubtype)) {
+    const prog = programTypes[resolvedSubtype]
+    return (
+      <div>
+        <PageHero
+          title={prog.title}
+          breadcrumb={[
+            { label: 'Programs', path: '/programs' },
+            { label: 'Ongoing Projects', path: '/programs/ongoing' },
+            { label: prog.title }
+          ]}
+          bgImage={prog.image}
+        />
+        <div className="max-w-7xl mx-auto px-4 py-16">
+          {/* Sub nav */}
+          <div className="flex flex-wrap gap-3 mb-12">
+            {subNavPrograms.map(p => (
+              <Link
+                key={p.key}
+                to={`/programs/ongoing/${p.key}`}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  p.key === resolvedSubtype ? 'bg-primary text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                {p.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+              <div className={`w-12 h-12 ${prog.color} rounded-2xl flex items-center justify-center mb-6`}>
+                <prog.icon size={24} className="text-white" />
+              </div>
+              <h2 className="font-heading text-3xl font-bold text-primary mb-5">{prog.title}</h2>
+              <p className="text-gray-600 leading-relaxed mb-8">{prog.desc}</p>
+              <h3 className="font-semibold text-primary mb-4">Key Activities</h3>
+              <ul className="space-y-3">
+                {prog.activities.map((a, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle size={18} className="text-accent shrink-0 mt-0.5" />
+                    <span className="text-gray-600 text-sm">{a}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 flex gap-4">
+                <Link to="/contact" className="btn-primary text-sm">Get Involved <ArrowRight size={14} /></Link>
+              </div>
+            </div>
+            <div>
+              <img src={prog.image} alt={prog.title} className="rounded-3xl w-full h-80 object-cover shadow-xl" />
+            </div>
+          </div>
+
+          {/* Stats Section */}
+          <div className="mt-16">
+            <h3 className="font-heading text-2xl font-bold text-primary mb-8 text-center">Our Impact in Numbers</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {prog.stats.map((stat, i) => (
+                <div key={i} className={`rounded-2xl p-6 text-center text-white ${prog.color}`}>
+                  <p className="text-3xl font-bold mb-1">{stat.value}</p>
+                  <p className="text-sm opacity-90">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Impact Statement */}
+          <div className="mt-12 bg-gray-50 border border-gray-100 rounded-3xl p-8">
+            <h3 className="font-heading text-xl font-bold text-primary mb-4">Program Impact</h3>
+            <p className="text-gray-600 leading-relaxed">{prog.impact}</p>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   // If it's a project list type
   if (type === 'ongoing' || type === 'completed' || type === 'government') {
@@ -147,15 +262,22 @@ export default function Programs() {
             <div className="mb-12">
               <h3 className="font-heading text-xl font-bold text-primary mb-6">Program Categories</h3>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                {subNavPrograms.map(p => (
-                  <Link
-                    key={p.key}
-                    to={`/programs/ongoing/${p.key}`}
-                    className="bg-white border border-gray-200 rounded-2xl p-4 text-center hover:border-accent hover:shadow-md transition-all"
-                  >
-                    <p className="text-sm font-medium text-gray-700">{p.label}</p>
-                  </Link>
-                ))}
+                {subNavPrograms.map(p => {
+                  const prog = programTypes[p.key]
+                  return (
+                    <Link
+                      key={p.key}
+                      to={`/programs/ongoing/${p.key}`}
+                      className="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:border-accent hover:shadow-md transition-all group"
+                    >
+                      <div className={`w-10 h-10 ${prog.color} rounded-xl flex items-center justify-center mx-auto mb-3`}>
+                        <prog.icon size={18} className="text-white" />
+                      </div>
+                      <p className="text-sm font-semibold text-gray-800 mb-1">{p.label}</p>
+                      <p className="text-xs text-gray-500 leading-snug">{prog.stats[0].value} {prog.stats[0].label}</p>
+                    </Link>
+                  )
+                })}
               </div>
             </div>
           )}
@@ -183,66 +305,6 @@ export default function Programs() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  // Sub-program detail
-  const subTypes = Object.keys(programTypes)
-  if (subTypes.includes(type)) {
-    const prog = programTypes[type]
-    return (
-      <div>
-        <PageHero
-          title={prog.title}
-          breadcrumb={[
-            { label: 'Programs', path: '/programs' },
-            { label: 'Ongoing Projects', path: '/programs/ongoing' },
-            { label: prog.title }
-          ]}
-          bgImage={prog.image}
-        />
-        <div className="max-w-7xl mx-auto px-4 py-16">
-          {/* Sub nav */}
-          <div className="flex flex-wrap gap-3 mb-12">
-            {subNavPrograms.map(p => (
-              <Link
-                key={p.key}
-                to={`/programs/ongoing/${p.key}`}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  p.key === type ? 'bg-primary text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-              >
-                {p.label}
-              </Link>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div>
-              <div className={`w-12 h-12 ${prog.color} rounded-2xl flex items-center justify-center mb-6`}>
-                <prog.icon size={24} className="text-white" />
-              </div>
-              <h2 className="font-heading text-3xl font-bold text-primary mb-5">{prog.title}</h2>
-              <p className="text-gray-600 leading-relaxed mb-8">{prog.desc}</p>
-              <h3 className="font-semibold text-primary mb-4">Key Activities</h3>
-              <ul className="space-y-3">
-                {prog.activities.map((a, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <CheckCircle size={18} className="text-accent shrink-0 mt-0.5" />
-                    <span className="text-gray-600 text-sm">{a}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8 flex gap-4">
-                <Link to="/contact" className="btn-primary text-sm">Get Involved <ArrowRight size={14} /></Link>
-              </div>
-            </div>
-            <div>
-              <img src={prog.image} alt={prog.title} className="rounded-3xl w-full h-80 object-cover shadow-xl" />
-            </div>
           </div>
         </div>
       </div>
