@@ -12,7 +12,7 @@ export default {
         cream: '#f8f5f0',
       },
       fontFamily: {
-        heading: ['"Playfair Display"', 'Georgia', 'serif'],
+        heading: ['"Poppins"', 'sans-serif'],
         body: ['"DM Sans"', 'sans-serif'],
       },
     },
