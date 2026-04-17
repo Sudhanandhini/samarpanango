@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, ChevronDown, Phone, Mail, MapPin, Heart } from 'lucide-react'
+import { Menu, X, ChevronDown, Phone, Mail, MapPin, ArrowRight } from 'lucide-react'
+import logo from "../assets/logo.png"
 
 const navItems = [
   { label: 'Home', path: '/' },
@@ -74,6 +75,11 @@ const SocialIcon = ({ platform }) => {
         <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" />
       </svg>
     ),
+    wa: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+      </svg>
+    ),
   }
   return icons[platform] || null
 }
@@ -116,30 +122,52 @@ export default function Header() {
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="bg-primary-dark text-white text-xs py-2 hidden md:block border-b border-primary-light/30">
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div className="flex gap-5 items-center">
-            <span className="flex items-center gap-1.5 text-gray-300">
-              <MapPin size={11} className="text-accent" />
-              Bangalore, Karnataka, India
-            </span>
-            <span className="w-px h-3 bg-white/20" />
-            <a href="mailto:samarpana2000@gmail.com" className="flex items-center gap-1.5 text-gray-300 hover:text-accent transition-colors duration-200">
-              <Mail size={11} className="text-accent" />
-              samarpana2000@gmail.com
-            </a>
-            <span className="w-px h-3 bg-white/20" />
-            <a href="tel:9483700272" className="flex items-center gap-1.5 text-gray-300 hover:text-accent transition-colors duration-200">
-              <Phone size={11} className="text-accent" />
-              +91 94837 00272
-            </a>
+      {/* ── Top Info Bar ── cream background with labeled contact sections */}
+      <div className="bg-cream hidden md:block border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6 flex items-stretch justify-between">
+
+          {/* Address */}
+          <div className="flex items-center gap-3 py-3 pr-6 border-r border-gray-200">
+            <div className="w-9 h-9 rounded-full border border-primary/30 flex items-center justify-center shrink-0">
+              <MapPin size={15} className="text-primary" />
+            </div>
+            <div>
+              <p className="text-[10px] text-gray-400 uppercase tracking-wider leading-none mb-0.5">Our Address</p>
+              <p className="text-sm font-semibold text-primary leading-none">Raichur Dist, Karnataka — Pin 584128, India</p>
+            </div>
           </div>
-          <div className="flex items-center gap-2.5">
-            <span className="text-gray-400 text-[11px] mr-1 tracking-wide">Follow Us</span>
+
+          {/* Phone */}
+          <div className="flex items-center gap-3 py-3 px-6 border-r border-gray-200">
+            <div className="w-9 h-9 rounded-full border border-primary/30 flex items-center justify-center shrink-0">
+              <Phone size={15} className="text-primary" />
+            </div>
+            <div>
+              <p className="text-[10px] text-gray-400 uppercase tracking-wider leading-none mb-0.5">Call Us</p>
+              <a href="tel:9483700272" className="text-sm font-semibold text-primary hover:text-accent transition-colors leading-none">
+                +91 94837 00272
+              </a>
+            </div>
+          </div>
+
+          {/* Email */}
+          <div className="flex items-center gap-3 py-3 px-6 border-r border-gray-200">
+            <div className="w-9 h-9 rounded-full border border-primary/30 flex items-center justify-center shrink-0">
+              <Mail size={15} className="text-primary" />
+            </div>
+            <div>
+              <p className="text-[10px] text-gray-400 uppercase tracking-wider leading-none mb-0.5">Email</p>
+              <a href="mailto:samarpana2000@gmail.com" className="text-sm font-semibold text-primary hover:text-accent transition-colors leading-none">
+                samarpana2000@gmail.com
+              </a>
+            </div>
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex items-center gap-2.5 py-3 pl-6">
             {[
-              { platform: 'fb', href: 'https://www.facebook.com/samarpanango',  label: 'Facebook'  },
               { platform: 'tw', href: 'https://twitter.com/samarpanango',        label: 'Twitter'   },
+              { platform: 'wa', href: 'https://wa.me/919483700272',               label: 'WhatsApp'  },
               { platform: 'ig', href: 'https://www.instagram.com/samarpanango', label: 'Instagram' },
               { platform: 'yt', href: 'https://www.youtube.com/@vilask7880',     label: 'YouTube'   },
             ].map(s => (
@@ -149,7 +177,7 @@ export default function Header() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={s.label}
-                className="w-6 h-6 bg-primary-light/60 border border-white/10 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent transition-all duration-200 text-white"
+                className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-primary hover:bg-primary hover:text-white hover:border-primary transition-all duration-200"
               >
                 <SocialIcon platform={s.platform} />
               </a>
@@ -158,30 +186,13 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main Nav */}
-      <header
-        className={`bg-white sticky top-0 z-50 transition-all duration-300 ${
-          scrolled ? 'shadow-lg border-b border-gray-100' : 'shadow-sm'
-        }`}
-      >
-        {/* Accent line at top */}
-        <div className="h-0.5 bg-gradient-to-r from-primary via-accent to-primary-light" />
+      {/* ── Main Nav ── gold/accent background */}
+      <header className={`bg-accent sticky top-0 z-50 transition-shadow duration-300 ${scrolled ? 'shadow-xl' : 'shadow-md'}`}>
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-28 md:h-[100px]">
 
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 md:h-[72px]">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group shrink-0">
-            <div className="relative w-11 h-11 rounded-full bg-gradient-to-br from-primary to-primary-light flex items-center justify-center shadow-md group-hover:shadow-primary/30 transition-shadow duration-300">
-              <span className="text-white font-heading font-bold text-xl">S</span>
-              <div className="absolute inset-0 rounded-full border-2 border-accent/40 group-hover:border-accent transition-colors duration-300" />
-            </div>
-            <div className="leading-tight">
-              <div className="font-heading font-bold text-primary text-[17px] group-hover:text-primary-light transition-colors duration-200">
-                Samarpana
-              </div>
-              <div className="text-[10px] text-gray-400 tracking-wider uppercase font-medium">
-                NGO · Serving Humanity
-              </div>
-            </div>
+          <Link to="/" className="flex items-center gap-2 shrink-0">
+            <img src={logo} alt="Samarpana Logo" className="h-20 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}
@@ -195,52 +206,42 @@ export default function Header() {
               >
                 <Link
                   to={item.path}
-                  className={`relative flex items-center gap-1 px-3 py-2 text-[13px] font-medium rounded-lg transition-all duration-200 group
+                  className={`relative flex items-center gap-1 px-3 py-2 text-[14px] font-semibold rounded-lg transition-all duration-200
                     ${isActive(item)
-                      ? 'text-accent bg-accent/5'
-                      : 'text-gray-600 hover:text-primary hover:bg-gray-50'
+                      ? 'text-primary bg-black/10'
+                      : 'text-primary hover:bg-black/10'
                     }`}
                 >
                   {item.label}
                   {item.children && (
                     <ChevronDown
                       size={13}
-                      className={`transition-transform duration-200 ${activeDropdown === item.label ? 'rotate-180 text-accent' : ''}`}
+                      className={`transition-transform duration-200 ${activeDropdown === item.label ? 'rotate-180' : ''}`}
                     />
                   )}
-                  {/* Active underline */}
                   {isActive(item) && (
-                    <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-accent rounded-full" />
+                    <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-primary rounded-full" />
                   )}
                 </Link>
 
                 {/* Dropdown */}
                 {item.children && activeDropdown === item.label && (
-                  <div className="absolute top-[calc(100%+6px)] left-0 bg-white shadow-xl rounded-2xl border border-gray-100 min-w-[230px] py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                    {/* Triangle pointer */}
+                  <div className="absolute top-[calc(100%+6px)] left-0 bg-white shadow-xl rounded-2xl border border-gray-100 min-w-[230px] py-2 z-50">
                     <div className="absolute -top-1.5 left-6 w-3 h-3 bg-white border-l border-t border-gray-100 rotate-45" />
                     {item.children.map((child, idx) => (
                       <div key={child.label}>
-                        {idx > 0 && child.sub && (
-                          <div className="mx-3 my-1 border-t border-gray-50" />
-                        )}
+                        {idx > 0 && child.sub && <div className="mx-3 my-1 border-t border-gray-50" />}
                         <Link
                           to={child.path}
                           className="flex items-center justify-between px-4 py-2.5 text-[13px] text-gray-700 hover:bg-primary hover:text-white transition-all duration-150 mx-1 rounded-xl group/item"
                         >
                           <span>{child.label}</span>
-                          {child.sub && (
-                            <ChevronDown size={11} className="-rotate-90 opacity-50 group-hover/item:opacity-100" />
-                          )}
+                          {child.sub && <ChevronDown size={11} className="-rotate-90 opacity-50 group-hover/item:opacity-100" />}
                         </Link>
                         {child.sub && (
                           <div className="mx-3 mb-1 pl-3 border-l-2 border-accent/30">
                             {child.sub.map(s => (
-                              <Link
-                                key={s.label}
-                                to={s.path}
-                                className="flex items-center gap-1.5 px-2 py-1.5 text-xs text-gray-500 hover:text-accent transition-colors duration-150"
-                              >
+                              <Link key={s.label} to={s.path} className="flex items-center gap-1.5 px-2 py-1.5 text-xs text-gray-500 hover:text-accent transition-colors">
                                 <span className="w-1 h-1 rounded-full bg-accent/50 shrink-0" />
                                 {s.label}
                               </Link>
@@ -258,17 +259,17 @@ export default function Header() {
           {/* Donate button */}
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <Link
-              to="/contact"
-              className="flex items-center gap-2 bg-accent hover:bg-accent-light text-white text-[13px] font-semibold px-5 py-2.5 rounded-full shadow-md hover:shadow-accent/30 hover:shadow-lg transition-all duration-200 group"
+              to="/donate"
+              className="flex items-center gap-2 bg-primary hover:bg-primary-light text-white text-[13px] font-semibold px-5 py-2.5 rounded-full shadow-md transition-all duration-200"
             >
-              <Heart size={14} className="group-hover:scale-110 transition-transform duration-200" />
               Donate Now
+              <ArrowRight size={14} />
             </Link>
           </div>
 
           {/* Mobile toggle */}
           <button
-            className="lg:hidden p-2 rounded-xl text-primary hover:bg-gray-100 transition-colors"
+            className="lg:hidden p-2 rounded-xl text-primary hover:bg-black/10 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -285,21 +286,13 @@ export default function Header() {
                   <div className="flex items-center justify-between">
                     <Link
                       to={item.path}
-                      className={`flex-1 py-3 text-sm font-medium transition-colors ${
-                        isActive(item) ? 'text-accent' : 'text-gray-800'
-                      }`}
+                      className={`flex-1 py-3 text-sm font-medium transition-colors ${isActive(item) ? 'text-accent' : 'text-gray-800'}`}
                     >
                       {item.label}
                     </Link>
                     {item.children && (
-                      <button
-                        onClick={() => toggleMobile(item.label)}
-                        className="p-2 text-gray-400 hover:text-primary transition-colors"
-                      >
-                        <ChevronDown
-                          size={16}
-                          className={`transition-transform duration-200 ${mobileExpanded[item.label] ? 'rotate-180 text-accent' : ''}`}
-                        />
+                      <button onClick={() => toggleMobile(item.label)} className="p-2 text-gray-400 hover:text-primary transition-colors">
+                        <ChevronDown size={16} className={`transition-transform duration-200 ${mobileExpanded[item.label] ? 'rotate-180 text-accent' : ''}`} />
                       </button>
                     )}
                   </div>
@@ -307,18 +300,11 @@ export default function Header() {
                     <div className="bg-gray-50 rounded-xl mb-2 py-1">
                       {item.children.map(child => (
                         <div key={child.label}>
-                          <Link
-                            to={child.path}
-                            className="block px-4 py-2 text-sm text-gray-600 hover:text-primary font-medium transition-colors"
-                          >
+                          <Link to={child.path} className="block px-4 py-2 text-sm text-gray-600 hover:text-primary font-medium transition-colors">
                             {child.label}
                           </Link>
                           {child.sub && child.sub.map(s => (
-                            <Link
-                              key={s.label}
-                              to={s.path}
-                              className="flex items-center gap-1.5 pl-7 pr-4 py-1.5 text-xs text-gray-500 hover:text-accent transition-colors"
-                            >
+                            <Link key={s.label} to={s.path} className="flex items-center gap-1.5 pl-7 pr-4 py-1.5 text-xs text-gray-500 hover:text-accent transition-colors">
                               <span className="w-1 h-1 rounded-full bg-accent/50" />
                               {s.label}
                             </Link>
@@ -331,12 +317,8 @@ export default function Header() {
               ))}
             </div>
             <div className="p-4 border-t border-gray-100">
-              <Link
-                to="/contact"
-                className="flex items-center justify-center gap-2 btn-primary w-full text-sm"
-              >
-                <Heart size={14} />
-                Donate Now
+              <Link to="/contact" className="flex items-center justify-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-semibold w-full text-sm">
+                Donate Now <ArrowRight size={14} />
               </Link>
             </div>
           </div>

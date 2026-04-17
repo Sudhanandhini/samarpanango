@@ -9,11 +9,12 @@ import Reports from './pages/Reports'
 import GetInvolved from './pages/GetInvolved'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
+import Donate from './pages/Donate'
 import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/samarpanango">
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Header />
@@ -31,6 +32,7 @@ export default function App() {
             <Route path="/get-involved/:type" element={<GetInvolved />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/donate" element={<Donate />} />
           </Routes>
         </main>
         <Footer />

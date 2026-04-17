@@ -1,22 +1,26 @@
 import { useState } from 'react'
 import PageHero from '../components/PageHero'
 import { X, ZoomIn } from 'lucide-react'
+import img1 from '../assets/Picture9.jpg'
+import img2 from '../assets/Picture10.jpg'
+import img3 from '../assets/Picture11.jpg'
+import img4 from '../assets/Picture12.jpg'
+import img5 from '../assets/Picture13.jpg'
+import img6 from '../assets/Picture14.jpg'
+import img7 from '../assets/Picture15.jpg'
+import img8 from '../assets/Picture16.jpg'
 
 const categories = ['All', 'Education', 'Health', 'Women Empowerment', 'Community', 'Events']
 
 const images = [
-  { src: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&q=80', cat: 'Education', title: 'School Support Program' },
-  { src: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80', cat: 'Community', title: 'Community Outreach' },
-  { src: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=600&q=80', cat: 'Education', title: 'Learning Together' },
-  { src: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80', cat: 'Women Empowerment', title: 'Women SHG Meeting' },
-  { src: 'https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=600&q=80', cat: 'Health', title: 'Health Camp' },
-  { src: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80', cat: 'Events', title: 'Annual Day Event' },
-  { src: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=600&q=80', cat: 'Education', title: 'Computer Training' },
-  { src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80', cat: 'Events', title: 'Partner Meeting' },
-  { src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80', cat: 'Health', title: 'Medical Camp' },
-  { src: 'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=600&q=80', cat: 'Community', title: 'Village Development' },
-  { src: 'https://images.unsplash.com/photo-1607748851687-ba9a10438621?w=600&q=80', cat: 'Women Empowerment', title: 'Skill Training Workshop' },
-  { src: 'https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=600&q=80', cat: 'Events', title: 'Awareness Rally' },
+  { src: img1, cat: 'Education', title: 'School Support Program' },
+  { src: img2, cat: 'Community', title: 'Community Outreach' },
+  { src: img3, cat: 'Education', title: 'Learning Together' },
+  { src: img4, cat: 'Women Empowerment', title: 'Women SHG Meeting' },
+  { src: img5, cat: 'Health', title: 'Health Camp' },
+  { src: img6, cat: 'Events', title: 'Annual Day Event' },
+  { src: img7, cat: 'Education', title: 'Computer Training' },
+  { src: img8, cat: 'Events', title: 'Partner Meeting' },
 ]
 
 export default function Gallery() {

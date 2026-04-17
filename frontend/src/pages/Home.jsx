@@ -2,6 +2,15 @@ import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Heart, Users, BookOpen, Stethoscope, Wrench, Home as HomeIcon, Star, TrendingUp } from 'lucide-react'
 
+import img1 from '../assets/1.jpg';
+import img2 from '../assets/2.jpg';
+import img3 from '../assets/3.jpg';
+import img4 from '../assets/4.jpg';
+import img5 from '../assets/5.jpg';
+import img6 from '../assets/6.jpg';
+import img7 from '../assets/7.jpg';
+
+
 const programs = [
   { icon: BookOpen, title: 'Education Programs', desc: 'Empowering children and youth through quality education and scholarships.', color: 'bg-blue-50', iconColor: 'text-blue-600', link: '/programs/ongoing/education' },
   { icon: Heart, title: 'Women Empowerment', desc: 'Building skills and confidence in women for a self-reliant future.', color: 'bg-pink-50', iconColor: 'text-pink-600', link: '/programs/ongoing/women' },
@@ -25,19 +34,19 @@ const testimonials = [
 
 const heroSlides = [
   {
-    bg: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80',
+    bg: img3,
     tag: 'Serving Humanity',
     title: 'We Are a Non-Profit Charity Organization',
     desc: 'Samarpana NGO works tirelessly to uplift marginalized communities through education, health, and sustainable livelihood programs across Karnataka.',
   },
   {
-    bg: 'https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=1600&q=80',
+    bg: img6,
     tag: 'Education & Empowerment',
     title: 'Every Child Deserves a Bright Future',
     desc: 'We provide quality education, scholarships, and learning support to ensure no child is left behind due to poverty.',
   },
   {
-    bg: 'https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=1600&q=80',
+    bg: img7,
     tag: 'Community Health',
     title: 'Healthier Communities, Better Lives',
     desc: 'Our health programs bring medical access, awareness, and care to remote villages and underserved populations.',
@@ -187,7 +196,7 @@ export default function Home() {
           </div>
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=700&q=80"
+              src={img3}
               alt="Children"
               className="rounded-3xl w-full h-96 object-cover shadow-2xl"
             />
@@ -255,12 +264,10 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {[
-            'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80',
-            'https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&q=80',
-            'https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=600&q=80',
-            'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80',
-            'https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=600&q=80',
-            'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80',
+            img1, img2, img3, img4, img5, img6, img7, 
+             'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80',
+            // 'https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=600&q=80',
+            // 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80',
           ].map((src, i) => (
             <div key={i} className={`overflow-hidden rounded-2xl ${i === 3 ? 'md:col-span-2' : ''}`}>
               <img src={src} alt="" className="w-full h-52 object-cover hover:scale-105 transition-transform duration-500" />

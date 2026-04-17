@@ -12,7 +12,10 @@ body {
   background: #fff;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  font-size: 17px;
+}
 
 .wavy-bottom {
   position: relative;

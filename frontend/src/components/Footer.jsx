@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react'
+import logofooter from '../assets/logo-f.png'
 
 export default function Footer() {
   return (
@@ -9,18 +10,18 @@ export default function Footer() {
         {/* About */}
         <div>
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
+            {/* <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-lg font-heading">S</span>
-            </div>
+            </div> */}
             <div>
-              <div className="font-heading font-bold text-white text-lg leading-tight">Samarpana</div>
-              <div className="text-xs text-gray-400">NGO | Serving Humanity</div>
+              <img src={logofooter} alt="Samarpana Logo" className="w-[100px] h-auto rounded-full object-cover" />
+            
             </div>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed">
             Samarpana is dedicated to empowering communities through education, health, and sustainable development programs across Karnataka.
           </p>
-          <div className="flex gap-3 mt-5">
+          {/* <div className="flex gap-3 mt-5">
             {[
               {
                 href: 'https://www.facebook.com/samarpanango',
@@ -73,7 +74,7 @@ export default function Footer() {
                 {s.icon}
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Quick Links */}
@@ -124,19 +125,29 @@ export default function Footer() {
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
               <MapPin size={16} className="text-accent mt-0.5 shrink-0" />
-              <span className="text-gray-400 text-sm">Bangalore, Karnataka, India</span>
+              <span className="text-gray-400 text-sm">Near Govt. Junior College, PWD Camp,<br />Sindhanur, Raichur Dist.<br />Karnataka — 584128</span>
             </li>
-            <li className="flex items-center gap-3">
-              <Phone size={16} className="text-accent shrink-0" />
-              <a href="tel:9483700272" className="text-gray-400 hover:text-accent text-sm transition-colors">
-                Mr. Ramdas M: +91 94837 00272
-              </a>
+            <li className="flex items-start gap-3">
+              <Phone size={16} className="text-accent mt-0.5 shrink-0" />
+              <div className="space-y-1">
+                <a href="tel:9448518172" className="block text-gray-400 hover:text-accent text-sm transition-colors">
+                  Mr. Chandrappa: 9448518172
+                </a>
+                <a href="tel:9483700272" className="block text-gray-400 hover:text-accent text-sm transition-colors">
+                  Mr. Ramadas: 9483700272
+                </a>
+              </div>
             </li>
-            <li className="flex items-center gap-3">
-              <Mail size={16} className="text-accent shrink-0" />
-              <a href="mailto:samarpana2000@gmail.com" className="text-gray-400 hover:text-accent text-sm transition-colors break-all">
-                samarpana2000@gmail.com
-              </a>
+            <li className="flex items-start gap-3">
+              <Mail size={16} className="text-accent mt-0.5 shrink-0" />
+              <div className="space-y-1">
+                <a href="mailto:samarpana_org@rediffmail.com" className="block text-gray-400 hover:text-accent text-sm transition-colors break-all">
+                  samarpana_org@rediffmail.com
+                </a>
+                <a href="mailto:samarpana2000@gmail.com" className="block text-gray-400 hover:text-accent text-sm transition-colors break-all">
+                  samarpana2000@gmail.com
+                </a>
+              </div>
             </li>
           </ul>
 

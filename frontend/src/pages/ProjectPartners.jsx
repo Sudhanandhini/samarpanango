@@ -1,5 +1,9 @@
 import PageHero from '../components/PageHero'
 import { ExternalLink, HandshakeIcon } from 'lucide-react'
+import logo1 from '../assets/14.webp'
+import logo2 from '../assets/12.webp'
+import logo3 from '../assets/13.webp'
+import logo4 from '../assets/11.png'
 
 const partners = [
   {
@@ -9,6 +13,7 @@ const partners = [
     areas: ['Tribal Education', 'Community Welfare', 'Livelihood Support'],
     color: 'bg-blue-600',
     abbr: 'MTA',
+    logo: logo1,
   },
   {
     name: 'Karnataka AIDS Prevention Society, Bangalore',
@@ -17,6 +22,7 @@ const partners = [
     areas: ['HIV/AIDS Awareness', 'Preventive Health', 'Community Health'],
     color: 'bg-red-600',
     abbr: 'KAPS',
+    logo: logo2,
   },
   {
     name: 'NABARD Financial Services Ltd, Bangalore',
@@ -25,6 +31,7 @@ const partners = [
     areas: ['Microfinance', 'Rural Development', 'SHG Support'],
     color: 'bg-green-700',
     abbr: 'NABARD',
+    logo: logo3,
   },
   {
     name: 'Tektornix / Ralliant Pvt Ltd',
@@ -33,6 +40,7 @@ const partners = [
     areas: ['Skill Development', 'Youth Employment', 'CSR Programs'],
     color: 'bg-orange-600',
     abbr: 'TRP',
+    logo: logo4,
   },
 ]
 
@@ -58,8 +66,12 @@ export default function ProjectPartners() {
           {partners.map((p, i) => (
             <div key={i} className="bg-white border border-gray-100 rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow">
               <div className="flex items-start gap-5 mb-6">
-                <div className={`w-16 h-16 ${p.color} rounded-2xl flex items-center justify-center text-white font-bold text-sm shrink-0`}>
-                  {p.abbr}
+                {/* Logo or abbreviation */}
+                <div className={`w-16 h-16 rounded-2xl shrink-0 overflow-hidden flex items-center justify-center ${p.logo ? 'bg-white border border-gray-100 shadow-sm p-1' : `${p.color} text-white font-bold text-sm`}`}>
+                  {p.logo
+                    ? <img src={p.logo} alt={p.name} className="w-full h-full object-contain" />
+                    : p.abbr
+                  }
                 </div>
                 <div>
                   <h3 className="font-heading text-xl font-bold text-primary leading-tight">{p.name}</h3>
