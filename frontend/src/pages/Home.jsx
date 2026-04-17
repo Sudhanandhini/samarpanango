@@ -312,7 +312,7 @@ export default function Home() {
             Join us in making a difference. Every contribution, big or small, brings hope and opportunity to thousands of lives across Karnataka.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link to="/contact" className="btn-primary">Donate Now <ArrowRight size={16} /></Link>
+            <Link to="/donate" className="btn-primary">Donate Now <ArrowRight size={16} /></Link>
             <Link to="/get-involved/volunteer" className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-light transition-colors">
               Volunteer <Heart size={16} />
             </Link>

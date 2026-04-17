@@ -1,16 +1,33 @@
 import { useState } from 'react'
 import PageHero from '../components/PageHero'
-import { Phone, Mail, MapPin, Send, CheckCircle, Clock } from 'lucide-react'
+import { Phone, Mail, MapPin, Send, CheckCircle, Clock, Loader } from 'lucide-react'
 import banner from "../assets/banner.jpg"
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', address: '', message: '' })
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value })
-  const handleSubmit = e => {
+
+  const handleSubmit = async e => {
     e.preventDefault()
-    setSent(true)
+    setLoading(true)
+    setError('')
+    try {
+      const res = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error()
+      setSent(true)
+    } catch {
+      setError('Failed to send message. Please try again or email us directly.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -164,8 +181,9 @@ export default function Contact() {
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all resize-none"
                   />
                 </div>
-                <button type="submit" className="btn-primary text-base py-3.5 px-8">
-                  Send Message <Send size={18} />
+                {error && <p className="text-red-500 text-sm">{error}</p>}
+                <button type="submit" disabled={loading} className="btn-primary text-base py-3.5 px-8 disabled:opacity-60">
+                  {loading ? <><Loader size={18} className="animate-spin" /> Sending...</> : <>Send Message <Send size={18} /></>}
                 </button>
               </form>
             </>

@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
-import { Heart, Briefcase, CheckCircle, ArrowRight, Send } from 'lucide-react'
+import { Heart, Briefcase, CheckCircle, ArrowRight, Send, Loader } from 'lucide-react'
 import { useState } from 'react'
 import banner from "../assets/banner.jpg"
 
@@ -8,10 +8,26 @@ import banner from "../assets/banner.jpg"
 function VolunteerPage() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', area: '', message: '' })
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSent(true)
+    setLoading(true)
+    setError('')
+    try {
+      const res = await fetch('http://localhost:5000/api/volunteer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error()
+      setSent(true)
+    } catch {
+      setError('Failed to submit. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -107,8 +123,9 @@ function VolunteerPage() {
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-primary transition-colors resize-none"
                 />
               </div>
-              <button type="submit" className="btn-primary w-full justify-center">
-                Submit Application <Send size={16} />
+              {error && <p className="text-red-500 text-sm">{error}</p>}
+              <button type="submit" disabled={loading} className="btn-primary w-full justify-center disabled:opacity-60">
+                {loading ? <><Loader size={16} className="animate-spin" /> Submitting...</> : <>Submit Application <Send size={16} /></>}
               </button>
             </form>
           )}
