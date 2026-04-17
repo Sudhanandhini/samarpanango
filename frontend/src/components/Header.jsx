@@ -33,6 +33,7 @@ const navItems = [
         ],
       },
       { label: 'Completed Projects', path: '/programs/completed' },
+      { label: 'Upcoming Projects', path: '/programs/upcoming' },
       { label: 'Government Supported Projects', path: '/programs/government' },
     ],
   },
@@ -124,10 +125,10 @@ export default function Header() {
     <>
       {/* ── Top Info Bar ── cream background with labeled contact sections */}
       <div className="bg-cream hidden md:block border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 flex items-stretch justify-between">
+        <div className="max-w-7xl mx-auto px-6 flex items-stretch justify-between divide-x divide-gray-200">
 
           {/* Address */}
-          <div className="flex items-center gap-3 py-3 pr-6 border-r border-gray-200">
+          <div className="flex items-center gap-3 py-3 flex-1 justify-center">
             <div className="w-9 h-9 rounded-full border border-primary/30 flex items-center justify-center shrink-0">
               <MapPin size={15} className="text-primary" />
             </div>
@@ -138,7 +139,7 @@ export default function Header() {
           </div>
 
           {/* Phone */}
-          <div className="flex items-center gap-3 py-3 px-6 border-r border-gray-200">
+          <div className="flex items-center gap-3 py-3 flex-1 justify-center">
             <div className="w-9 h-9 rounded-full border border-primary/30 flex items-center justify-center shrink-0">
               <Phone size={15} className="text-primary" />
             </div>
@@ -151,7 +152,7 @@ export default function Header() {
           </div>
 
           {/* Email */}
-          <div className="flex items-center gap-3 py-3 px-6 border-r border-gray-200">
+          <div className="flex items-center gap-3 py-3 flex-1 justify-center">
             <div className="w-9 h-9 rounded-full border border-primary/30 flex items-center justify-center shrink-0">
               <Mail size={15} className="text-primary" />
             </div>
@@ -161,27 +162,6 @@ export default function Header() {
                 samarpana2000@gmail.com
               </a>
             </div>
-          </div>
-
-          {/* Social Icons */}
-          <div className="flex items-center gap-2.5 py-3 pl-6">
-            {[
-              { platform: 'tw', href: 'https://twitter.com/samarpanango',        label: 'Twitter'   },
-              { platform: 'wa', href: 'https://wa.me/919483700272',               label: 'WhatsApp'  },
-              { platform: 'ig', href: 'https://www.instagram.com/samarpanango', label: 'Instagram' },
-              { platform: 'yt', href: 'https://www.youtube.com/@vilask7880',     label: 'YouTube'   },
-            ].map(s => (
-              <a
-                key={s.platform}
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={s.label}
-                className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-primary hover:bg-primary hover:text-white hover:border-primary transition-all duration-200"
-              >
-                <SocialIcon platform={s.platform} />
-              </a>
-            ))}
           </div>
         </div>
       </div>

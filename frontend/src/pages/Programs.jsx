@@ -6,16 +6,15 @@ import {
   Star, Leaf, ChevronRight, IndianRupee, Award, FileText
 } from 'lucide-react'
 
-import img1 from '../assets/Picture5.jpg';
-import img2 from '../assets/Picture6.jpg';
+import img1 from '../assets/1.jpg';
+import img2 from '../assets/2.jpg';
 import img3 from '../assets/3.jpg';
 import img4 from '../assets/4.jpg';
-import img5 from '../assets/Picture4.jpg';
-import img6 from '../assets/2.jpg';
+import img5 from '../assets/5.jpg';
+import img6 from '../assets/6.jpg';
 import img7 from '../assets/7.jpg';
 
 import banner from "../assets/banner.jpg"
-
 // ─── DATA ───────────────────────────────────────────────────────────────────
 
 const ongoingProjects = [
@@ -78,7 +77,7 @@ const ongoingProjects = [
     amount2425: '₹1,28,552',
     color: 'bg-orange-500',
     icon: Home,
-    image: img3,
+    image: img5,
     tag: 'Education',
     tagColor: 'bg-blue-100 text-blue-700',
     desc: 'Running a home for poor and orphan children entirely on donor contributions — providing free education, lodging, boarding, nutritious meals, and care without any government grant.',
@@ -94,7 +93,7 @@ const ongoingProjects = [
     amount2425: '₹49,715',
     color: 'bg-purple-600',
     icon: Stethoscope,
-    image: img5,
+    image: img3,
     tag: 'Health',
     tagColor: 'bg-green-100 text-green-700',
     desc: 'Mobile medical camps in Gunda and Kalmangi Panchayat with trained doctors. Rural Health Clinic with twice-weekly doctor visits, free medicines, and referral support.',
@@ -118,53 +117,56 @@ const ongoingProjects = [
 ]
 
 const pastProjects = [
-  { sl: 1, name: 'Integrated Education for Disabled Children (IEDC/IEDSS)', years: '2004–2009', target: 'Disabled School Children', beneficiaries: 137, nature: 'Education & Training', funder: 'MHRD, New Delhi' },
-  { sl: 2, name: 'Home Education Programme for Disabled', years: '2005–2012', target: 'Disabled Children', beneficiaries: 150, nature: 'Education', funder: 'SSA' },
-  { sl: 3, name: 'Tent School', years: '2005–06', target: 'Dropouts', beneficiaries: 50, nature: 'Education', funder: 'SSA' },
-  { sl: 4, name: '12 Month & 6 Month Bridge Course Programme', years: '2005–2008', target: 'Dropouts', beneficiaries: 500, nature: 'Education', funder: 'SSA' },
-  { sl: 5, name: 'PRA & Training Programme', years: '2006–2008', target: 'VFC Members', beneficiaries: 300, nature: 'Training', funder: 'Department of Forest, Raichur' },
-  { sl: 6, name: 'Child Labour School', years: '2006–2013', target: 'Child Labourers', beneficiaries: 500, nature: 'Education & Training', funder: 'NCLP' },
-  { sl: 7, name: 'Grameen Vikas Andolana Project', years: '2006–2008', target: 'PRI, SHG & Youth', beneficiaries: 881, nature: 'Training & Awareness', funder: 'CAPART, Dharwad' },
-  { sl: 8, name: 'SJSY', years: '2008–09', target: 'SC & ST Rural Women', beneficiaries: 200, nature: 'Training & Awareness', funder: 'Zilla Panchayat, Koppal' },
-  { sl: 9, name: 'KGBV School (Kasturba Gandhi Balika Vidyalaya)', years: '2005–2013', target: 'Dropout Girls', beneficiaries: 450, nature: 'Education', funder: 'SSA' },
-  { sl: 10, name: 'IEDSS (Inclusive Education for Disabled at Secondary Stage)', years: '2009–2012', target: 'Disabled', beneficiaries: 25, nature: 'Education & Training', funder: 'MHRD' },
-  { sl: 11, name: 'MGNREGA – Training & Action Plan Preparation', years: '2011–12', target: 'Community', beneficiaries: 4000, nature: 'Training, Action Plan & Awareness', funder: 'Zilla Panchayat, Raichur' },
-  { sl: 12, name: 'Suvarna Grama Yojana', years: '2011–12', target: 'Community', beneficiaries: 2000, nature: 'Training & Action Plan', funder: 'Zilla Panchayat, Raichur' },
-  { sl: 13, name: 'Water Users Co-operative Society Training', years: '2010–2012', target: 'WUCS Members / Farmers', beneficiaries: 11650, nature: 'Training', funder: 'CADA, Munirabad' },
-  { sl: 14, name: 'Bio-Fuel Promotion Project', years: '2013–14', target: 'Community', beneficiaries: 600, nature: 'Awareness & Bio-Fuel Training', funder: 'Gram Panchayat' },
-  { sl: 15, name: 'MEDP – Fashion Designing & Micro Enterprises', years: '2023–24', target: 'SHG/JLG Members', beneficiaries: 30, nature: 'MEDP Training & Market Linkage', funder: 'NABARD' },
+  { sl: 1,   name: 'Integrated education for Disabled children project.(IEDC,IEDSS)', years: '2004-05 to 2008-09', target: 'Disabled school children', beneficiaries: 137,   nature: 'Education & Training',                                    funder: 'MHRD' },
+  { sl: 2,   name: 'Home education programme for disabled',                           years: '2005-06 to 2012',    target: 'Disabled children',        beneficiaries: 150,   nature: 'Education',                                               funder: 'SSA' },
+  { sl: 3,   name: 'Tent School',                                                     years: '2005-06',            target: 'Drop out',                  beneficiaries: 50,    nature: 'Education',                                               funder: 'SSA' },
+  { sl: 4,   name: '12 months & 6 months Bridge course programme',                   years: '2005-06 to 2008',    target: 'Drop out',                  beneficiaries: 500,   nature: 'Education',                                               funder: 'SSA' },
+  { sl: 5,   name: 'PRA & Training programme',                                        years: '2006-07-08',         target: 'VFC members',               beneficiaries: 300,   nature: 'Training',                                                funder: 'Dep. Forest rcr.' },
+  { sl: 6,   name: 'Child labour school',                                             years: '2006-07 to 2013',    target: 'Child labour',              beneficiaries: 500,   nature: 'Education & Training',                                    funder: 'NCLP' },
+  { sl: 7,   name: 'Grameen Vikas andolana project',                                  years: '2006-07-08',         target: 'PRI & SHG & youth',         beneficiaries: 881,   nature: 'Training & Awareness',                                    funder: 'CAPART Dharwad' },
+  { sl: 8,   name: 'SJSY',                                                            years: '2008-09',            target: 'SC & ST Rural Women',       beneficiaries: 200,   nature: 'Training & Awareness',                                    funder: 'ZP Koppal' },
+  { sl: '8', name: 'KGBV School',                                                     years: '2005-06 to 2012-13', target: 'Drop out girls',             beneficiaries: 450,   nature: 'Education',                                               funder: 'SSA' },
+  { sl: 9,   name: 'IEDSS',                                                           years: '2009-10 to 2011-12', target: 'Disabled',                  beneficiaries: 25,    nature: 'Education & training',                                    funder: 'MHRD' },
+  { sl: 10,  name: 'MGNREGA',                                                         years: '2011-12',            target: 'Community',                 beneficiaries: 4000,  nature: 'Training & preparation of action plan & awareness',       funder: 'ZP rcr' },
+  { sl: 11,  name: 'Suvarna Grama yojana',                                            years: '2011-12',            target: 'Community',                 beneficiaries: 2000,  nature: 'Training & preparation of action plan & awareness',       funder: 'ZP rcr' },
+  { sl: 12,  name: 'Water Users Co operative society training',                       years: '2010-11-12',         target: 'WUSC members / formers',    beneficiaries: 11650, nature: 'Training',                                                funder: 'CADA munirbad' },
+  { sl: 13,  name: 'Bio fuel promotion project',                                      years: '2013-14',            target: 'Community',                 beneficiaries: 600,   nature: 'Awareness & Training on promotion of Bio fuel plants',    funder: 'Grama Panchayth' },
+  { sl: 14,  name: 'GIA- ST Girls Hostel',                                            years: '2018-19 to Till the date', target: 'ST Rural Girls',       beneficiaries: 92,    nature: 'Hostel',                                                  funder: 'MOT' },
+  { sl: 15,  name: 'LWS Project',                                                     years: '2022-23 to Till the date', target: 'HIV/AIDS & Community HRGS', beneficiaries: 22000, nature: 'Awareness, Training & Clinical Service',           funder: 'KSAPS' },
+  { sl: 16,  name: 'Micro Finance Programme',                                         years: '2014 to Till the date',    target: 'SHG/JLG Members',      beneficiaries: 5000,  nature: 'Formation Financial, Linkage & MEDP Training',            funder: 'NBFINS' },
+  { sl: 17,  name: 'MEDP',                                                            years: '2024-25',            target: 'SHG/JLG Members',           beneficiaries: 30,    nature: 'MEDP Training',                                           funder: 'NABARD' },
 ]
 
 const financialHistory = [
   {
-    year: '2024–25',
+    year: '2024-25',
     projects: [
-      { name: 'GIA – ST Girls Hostel', funder: 'MOT', amount: 1495328, location: 'Gunda Village, Maski', scope: 'Training & Education' },
-      { name: 'Link Worker Project', funder: 'KSAPS', amount: 3155771, location: '100 Villages, Vijayapur', scope: 'Awareness & Training' },
-      { name: 'Micro Finance Programme', funder: 'NBFINS', amount: 352613, location: 'Sindhanur', scope: 'Financial Linkage & Skill Training' },
-      { name: 'Ashakirana Home', funder: 'Org & Community', amount: 128552, location: 'Sindhanur', scope: 'Education & Hostel' },
-      { name: 'Health on Wheel', funder: 'Org & Community', amount: 49715, location: 'Sindhanur / Gunda GP', scope: 'Health Camp & Awareness' },
-      { name: 'Skill Development Training', funder: 'Org & Community', amount: 154916, location: 'Sindhanur', scope: 'Training' },
+      { name: 'GIA- ST Girls Hostel',          funder: 'MOT',                           amount: 1495328, location: 'Gunda Village, Maski',              scope: 'Training & Education' },
+      { name: 'Link Worker Project',            funder: 'KSAPS',                         amount: 3155771, location: '100 Villages of Vijayapur Dist.',   scope: 'Awareness Training &' },
+      { name: 'Micro Finance Programme',        funder: 'NBFINS',                        amount: 352613,  location: 'Sindhanur',                         scope: 'Financial Linkage & Skill up gradation Training' },
+      { name: 'Home for Poor & orphan Children',funder: 'Organization & Community Contribution', amount: 128552, location: 'Sindhanur',                scope: 'Education & Hostel Facilities' },
+      { name: 'Health on Wheel Programme',      funder: 'Organization & Community Contribution', amount: 49715,  location: 'Sindhanur Taluka Gunda GP', scope: 'Health Camp & Awareness' },
+      { name: 'Skill development Training Project', funder: 'Organization & Community Contribution', amount: 154916, location: 'Sindhanur',             scope: 'Training' },
     ]
   },
   {
-    year: '2023–24',
+    year: '2023-24',
     projects: [
-      { name: 'GIA – ST Girls Hostel', funder: 'MOT', amount: 2600500, location: 'Gunda Village, Maski', scope: 'Training & Education' },
-      { name: 'Link Worker Project', funder: 'KSAPS', amount: 4515313, location: '100 Villages, Vijayapur', scope: 'Awareness & Training' },
-      { name: 'Micro Finance Programme', funder: 'NBFINS', amount: 344402, location: 'Sindhanur', scope: 'Financial Linkage & Skill Training' },
-      { name: 'MEDP', funder: 'NABARD', amount: 150000, location: 'Sindhanur / Dadesugur Village', scope: 'Training & Market Linkage' },
+      { name: 'GIA- ST Girls Hostel',    funder: 'MOT',    amount: 2600500, location: 'Gunda Village, Maski',            scope: 'Training & Education' },
+      { name: 'Link Worker Project',     funder: 'KSAPS',  amount: 4515313, location: '100 Villages of Vijayapur Dist.', scope: 'Awareness Training &' },
+      { name: 'Micro Finance Programme', funder: 'NBFINS', amount: 344402,  location: 'Sindhanur',                       scope: 'Financial Linkage & Skill up gradation Training' },
+      { name: 'MEDP',                    funder: 'NABARD', amount: 150000,  location: 'Sindhnur (Dagesugur Village)',     scope: 'Training & Market linkage' },
     ]
   },
   {
-    year: '2022–23',
+    year: '2022-23',
     projects: [
-      { name: 'GIA – ST Girls Hostel', funder: 'MOT', amount: 1011517, location: 'Gunda Village, Maski', scope: 'Training & Education' },
-      { name: 'Link Worker Project', funder: 'KSAPS', amount: 409102, location: '100 Villages, Vijayapur', scope: 'Awareness & Training' },
-      { name: 'Micro Finance Programme', funder: 'NBFINS', amount: 265923, location: 'Sindhanur', scope: 'Financial Linkage & Skill Training' },
-      { name: 'Ashakirana Home', funder: 'Org & Community', amount: 187398, location: 'Sindhanur', scope: 'Education & Hostel' },
-      { name: 'Health on Wheel', funder: 'Org & Community', amount: 41090, location: 'Sindhanur / Gunda GP', scope: 'Health Camp & Awareness' },
-      { name: 'Skill Development Training', funder: 'Org & Community', amount: 79661, location: 'Sindhanur', scope: 'Training' },
+      { name: 'GIA- ST Girls Hostel',           funder: 'MOT',                           amount: 1011517, location: 'Gunda Village, Maski',              scope: 'Training & Education' },
+      { name: 'Link Worker Project',             funder: 'KSAPS',                         amount: 409102,  location: '100 Villages of Vijayapur Dist.',   scope: 'Awareness Training &' },
+      { name: 'Micro Finance Programme',         funder: 'NBFINS',                        amount: 265923,  location: 'Sindhanur',                         scope: 'Financial Linkage & Skill up gradation Training' },
+      { name: 'Home for Poor & orphan Children', funder: 'Organization & Community Contribution', amount: 187398, location: 'Sindhanur',                scope: 'Education & Hostel Facilities' },
+      { name: 'Health on Wheel Programme',       funder: 'Organization & Community Contribution', amount: 41090,  location: 'Sindhanur Taluka Gunda GP', scope: 'Health Camp & Awareness' },
+      { name: 'Skill development Training Project', funder: 'Organization & Community Contribution', amount: 79661, location: 'Sindhanur',               scope: 'Training' },
     ]
   },
 ]
@@ -194,8 +196,8 @@ export default function Programs() {
         <PageHero
           title="Ongoing Projects"
           breadcrumb={[{ label: 'Programs / Services', path: '/programs' }, { label: 'Ongoing Projects' }]}
-          bgImage={banner}
-        />
+              bgImage={banner}
+            />
         <div className="max-w-7xl mx-auto px-4 py-16">
           <ProjectTypeNav active="ongoing" />
 
@@ -304,7 +306,7 @@ export default function Programs() {
           <div className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden mb-8">
             <div className="bg-primary px-6 py-4 flex items-center gap-3">
               <FileText size={18} className="text-accent" />
-              <h3 className="text-white font-semibold">Complete Project History — 2003 to 2024</h3>
+              <h3 className="text-white font-semibold">Funding agency / Department for Implementing Project Since from 2003 to 2024-25</h3>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -480,8 +482,7 @@ export default function Programs() {
           <ProjectTypeNav active="government" />
 
           <p className="text-gray-600 mb-10 max-w-2xl">
-            Financial records of projects implemented over the last 3 years (2022–2025) with corresponding 
-            funding agencies, amounts, and scope of work.
+            Last three experience. Details of the projects implemented from 2022-23 to 2024-25.
           </p>
 
           {financialHistory.map((fy, fi) => {
@@ -741,7 +742,7 @@ export default function Programs() {
       <PageHero
         title="Programs & Services"
         breadcrumb={[{ label: 'Programs & Services' }]}
-        bgImage={banner}
+        bgImage="https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=1600&q=80"
       />
       <div className="max-w-7xl mx-auto px-4 py-16">
 
