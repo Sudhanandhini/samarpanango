@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PageHero from '../components/PageHero'
 import { Phone, Mail, MapPin, Send, CheckCircle, Clock } from 'lucide-react'
+import banner from "../assets/banner.jpg"
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', address: '', message: '' })
@@ -17,7 +18,7 @@ export default function Contact() {
       <PageHero
         title="Contact Us"
         breadcrumb={[{ label: 'Contact Us' }]}
-        bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80"
+        bgImage={banner}
       />
 
       <section className="max-w-7xl mx-auto px-4 py-16">
@@ -37,7 +38,7 @@ export default function Contact() {
             {
               icon: Phone,
               label: 'Phone Numbers',
-              lines: ['Mr. Chandrappa (President): 9448518172', 'Mr. Ramadas (Gen. Secretary): 9483700272', 'Office: 08535-221272'],
+              lines: ['Mr. Chandrappa (President): 8217806059', 'Mr. Ramadas (Gen. Secretary): 9483700272', 'Office: 08535-221272'],
               color: 'bg-primary',
             },
             {
@@ -49,13 +50,13 @@ export default function Contact() {
             {
               icon: MapPin,
               label: 'Communication Address',
-              lines: ['Near Govt. Junior College, PWD Camp', 'Sindhanur Dist., Raichur State', 'Karnataka (India) — Pin 584128'],
+              lines: ['Samarpana Development Organization',  'W No 30 Valabellary Road  PWD camp', 'Sindhanur  Dist. Raichur State. Karnataka( India) ', 'Pin code No 584128'],
               color: 'bg-primary-light',
             },
             {
               icon: Mail,
               label: 'Email Address',
-              lines: ['samarpana_org@rediffmail.com', 'samarpana2000@gmail.com'],
+              lines: [ 'samarpana2000@gmail.com'],
               color: 'bg-green-600',
             },
             {

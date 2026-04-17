@@ -4,6 +4,7 @@ import logo1 from '../assets/14.webp'
 import logo2 from '../assets/12.webp'
 import logo3 from '../assets/13.webp'
 import logo4 from '../assets/11.png'
+import banner from "../assets/banner.jpg"
 
 const partners = [
   {
@@ -36,7 +37,7 @@ const partners = [
   {
     name: 'Tektornix / Ralliant Pvt Ltd',
     type: 'Corporate Partner',
-    desc: 'Through their CSR initiatives, Tektornix / Ralliant Pvt Ltd partners with Samarpana to support skill development and youth empowerment programs, bridging the gap between industry and community.',
+    desc: 'Through CSR support, Tektronix India Pvt. Ltd., Bengaluru funded a one-room building with ₹8.8 lakhs, while an additional room was constructed using ₹5 lakhs from MP and MLC grants.',
     areas: ['Skill Development', 'Youth Employment', 'CSR Programs'],
     color: 'bg-orange-600',
     abbr: 'TRP',
@@ -50,7 +51,7 @@ export default function ProjectPartners() {
       <PageHero
         title="Project Partners"
         breadcrumb={[{ label: 'Project Partners' }]}
-        bgImage="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1600&q=80"
+        bgImage={banner}
       />
 
       <section className="max-w-7xl mx-auto px-4 py-16">

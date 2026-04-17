@@ -7,8 +7,10 @@ import img2 from '../assets/2.jpg';
 import img3 from '../assets/3.jpg';
 import img4 from '../assets/4.jpg';
 import img5 from '../assets/5.jpg';
-import img6 from '../assets/6.jpg';
-import img7 from '../assets/7.jpg';
+import img6 from '../assets/picture8.jpg';
+import img7 from '../assets/picture7.jpg';
+
+import img8 from '../assets/Picture36.jpg';
 
 
 const programs = [
@@ -20,10 +22,10 @@ const programs = [
 ]
 
 const stats = [
-  { value: '25+', label: 'Years of Service' },
-  { value: '50,000+', label: 'Lives Impacted' },
-  { value: '100+', label: 'Villages Covered' },
-  { value: '30+', label: 'Ongoing Projects' },
+  { value: '5000+', label: 'Education' },
+  { value: '3500+', label: 'Women Empowered' },
+  { value: '120+', label: 'Health Camps' },
+  { value: '100+', label: 'Volunteers' },
 ]
 
 const testimonials = [
@@ -36,7 +38,7 @@ const heroSlides = [
   {
     bg: img3,
     tag: 'Serving Humanity',
-    title: 'We Are a Non-Profit Charity Organization',
+    title: 'We Are a Non-Profit Organization',
     desc: 'Samarpana NGO works tirelessly to uplift marginalized communities through education, health, and sustainable livelihood programs across Karnataka.',
   },
   {
@@ -105,7 +107,7 @@ export default function Home() {
             key={i}
             className={`absolute inset-0 transition-opacity duration-1000 ${i === slide ? 'opacity-100' : 'opacity-0'}`}
             style={{
-              backgroundImage: `linear-gradient(to right, rgba(13,36,24,0.92) 50%, rgba(13,36,24,0.6)), url(${s.bg})`,
+              backgroundImage: `linear-gradient(to right, rgb(13 36 24 / 38%) 50%, rgb(13 36 24 / 73%)), url(${s.bg})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
@@ -134,10 +136,10 @@ export default function Home() {
           {/* Quick stats card */}
           <div className="hidden md:grid grid-cols-2 gap-4">
             {[
-              { icon: BookOpen, label: 'Education', count: '12,000+', color: 'bg-blue-500' },
-              { icon: Heart, label: 'Women Empowered', count: '8,500+', color: 'bg-pink-500' },
-              { icon: Stethoscope, label: 'Health Camps', count: '500+', color: 'bg-green-500' },
-              { icon: Users, label: 'Volunteers', count: '200+', color: 'bg-orange-500' },
+              { icon: BookOpen, label: 'Education', count: '5,000+', color: 'bg-blue-500' },
+              { icon: Heart, label: 'Women Empowered', count: '3,500+', color: 'bg-pink-500' },
+              { icon: Stethoscope, label: 'Health Camps', count: '120+', color: 'bg-green-500' },
+              { icon: Users, label: 'Volunteers', count: '100+', color: 'bg-orange-500' },
             ].map((item, i) => (
               <div key={i} className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/20">
                 <div className={`w-10 h-10 ${item.color} rounded-xl flex items-center justify-center mb-3`}>
@@ -265,7 +267,7 @@ export default function Home() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {[
             img1, img2, img3, img4, img5, img6, img7, 
-             'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80',
+            img8,
             // 'https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=600&q=80',
             // 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80',
           ].map((src, i) => (

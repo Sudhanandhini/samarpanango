@@ -2,6 +2,8 @@ import { useParams, Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
 import { Heart, Briefcase, CheckCircle, ArrowRight, Send } from 'lucide-react'
 import { useState } from 'react'
+import banner from "../assets/banner.jpg"
+
 
 function VolunteerPage() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', area: '', message: '' })
@@ -169,7 +171,7 @@ export default function GetInvolved() {
 
   const isCareer = type === 'career'
   const title = isCareer ? 'Career' : 'Volunteer'
-  const bgImage = 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1600&q=80'
+  const bgImage = banner
 
   return (
     <div>

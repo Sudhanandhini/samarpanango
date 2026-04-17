@@ -6,13 +6,15 @@ import {
   Star, Leaf, ChevronRight, IndianRupee, Award, FileText
 } from 'lucide-react'
 
-import img1 from '../assets/1.jpg';
-import img2 from '../assets/2.jpg';
+import img1 from '../assets/Picture5.jpg';
+import img2 from '../assets/Picture6.jpg';
 import img3 from '../assets/3.jpg';
 import img4 from '../assets/4.jpg';
-import img5 from '../assets/5.jpg';
-import img6 from '../assets/6.jpg';
+import img5 from '../assets/Picture4.jpg';
+import img6 from '../assets/2.jpg';
 import img7 from '../assets/7.jpg';
+
+import banner from "../assets/banner.jpg"
 
 // ─── DATA ───────────────────────────────────────────────────────────────────
 
@@ -76,7 +78,7 @@ const ongoingProjects = [
     amount2425: '₹1,28,552',
     color: 'bg-orange-500',
     icon: Home,
-    image: img5,
+    image: img3,
     tag: 'Education',
     tagColor: 'bg-blue-100 text-blue-700',
     desc: 'Running a home for poor and orphan children entirely on donor contributions — providing free education, lodging, boarding, nutritious meals, and care without any government grant.',
@@ -92,7 +94,7 @@ const ongoingProjects = [
     amount2425: '₹49,715',
     color: 'bg-purple-600',
     icon: Stethoscope,
-    image: img3,
+    image: img5,
     tag: 'Health',
     tagColor: 'bg-green-100 text-green-700',
     desc: 'Mobile medical camps in Gunda and Kalmangi Panchayat with trained doctors. Rural Health Clinic with twice-weekly doctor visits, free medicines, and referral support.',
@@ -192,7 +194,7 @@ export default function Programs() {
         <PageHero
           title="Ongoing Projects"
           breadcrumb={[{ label: 'Programs / Services', path: '/programs' }, { label: 'Ongoing Projects' }]}
-          bgImage="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1600&q=80"
+          bgImage={banner}
         />
         <div className="max-w-7xl mx-auto px-4 py-16">
           <ProjectTypeNav active="ongoing" />
@@ -265,7 +267,7 @@ export default function Programs() {
         <PageHero
           title="Past & Completed Projects"
           breadcrumb={[{ label: 'Programs / Services', path: '/programs' }, { label: 'Completed Projects' }]}
-          bgImage="https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=1600&q=80"
+          bgImage={banner}
         />
         <div className="max-w-7xl mx-auto px-4 py-16">
           <ProjectTypeNav active="completed" />
@@ -380,7 +382,7 @@ export default function Programs() {
         <PageHero
           title="Future Plans & Upcoming Projects"
           breadcrumb={[{ label: 'Programs / Services', path: '/programs' }, { label: 'Upcoming Projects' }]}
-          bgImage="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80"
+          bgImage={banner}
         />
         <div className="max-w-7xl mx-auto px-4 py-16">
           <ProjectTypeNav active="upcoming" />
@@ -472,7 +474,7 @@ export default function Programs() {
         <PageHero
           title="Government Supported Projects"
           breadcrumb={[{ label: 'Programs / Services', path: '/programs' }, { label: 'Govt. Supported' }]}
-          bgImage="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1600&q=80"
+          bgImage={banner}
         />
         <div className="max-w-7xl mx-auto px-4 py-16">
           <ProjectTypeNav active="government" />
@@ -739,7 +741,7 @@ export default function Programs() {
       <PageHero
         title="Programs & Services"
         breadcrumb={[{ label: 'Programs & Services' }]}
-        bgImage="https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=1600&q=80"
+        bgImage={banner}
       />
       <div className="max-w-7xl mx-auto px-4 py-16">
 

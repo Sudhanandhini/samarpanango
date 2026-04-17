@@ -4,6 +4,8 @@ import { Copy, CheckCircle, Heart, Building2, Phone, Mail, Globe, ArrowRight } f
 import { useState } from 'react'
 import qr from '../assets/qr.jpg'
 
+import banner from "../assets/banner.jpg"
+
 const regDetails = [
   { label: 'Name of the NGO', value: 'Samarpana Development Organization' },
   { label: 'Contact Person', value: 'Mr. Chandrappa MSW — President\nCell: 9448518172\n\nMr. Ramadas MSW — General Secretary\nCell: 9483700272' },
@@ -49,7 +51,7 @@ export default function Donate() {
       <PageHero
         title="Donate Now"
         breadcrumb={[{ label: 'Donate Now' }]}
-        bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80"
+        bgImage={banner}
       />
 
       <section className="max-w-6xl mx-auto px-4 py-16">
