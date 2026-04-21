@@ -171,10 +171,12 @@ export default function Home() {
             <span className="section-tag">About Us</span>
             <h2 className="section-title mb-6">Our goal is to save more lives with your help</h2>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Samarpana has been at the forefront of social development in Karnataka for over two decades. We believe in the power of community-driven change and work hand-in-hand with local populations to identify and address their most pressing needs.
+             The organization is recognized by multiple government departments, including the Department of E-Governance, Women and Child Welfare, and Senior Citizens and Disabled Welfare. Since its inception, Samarpan Abhiwradi Sansthan has been actively engaged in social development initiatives.
+
+
             </p>
             <p className="text-gray-600 leading-relaxed mb-8">
-              Our approach combines grassroots engagement with professional program management, ensuring that every rupee donated translates into meaningful impact for the communities we serve.
+          Samarpana operates through a network of dedicated staff, volunteers, and community partners across Karnataka, reaching thousands of beneficiaries every year.
             </p>
             <div className="grid grid-cols-2 gap-4 mb-8">
               {[

@@ -6,13 +6,15 @@ import {
   Star, Leaf, ChevronRight, IndianRupee, Award, FileText
 } from 'lucide-react'
 
-import img1 from '../assets/1.jpg';
-import img2 from '../assets/2.jpg';
+import img1 from '../assets/Picture6.jpg';
+import img2 from '../assets/Picture5.jpg';
 import img3 from '../assets/3.jpg';
 import img4 from '../assets/4.jpg';
-import img5 from '../assets/5.jpg';
-import img6 from '../assets/6.jpg';
+import img5 from '../assets/picture4.jpg';
+import img6 from '../assets/2.jpg';
 import img7 from '../assets/7.jpg';
+
+import img20 from '../assets/women.jpg';
 
 import banner from "../assets/banner.jpg"
 // ─── DATA ───────────────────────────────────────────────────────────────────
@@ -77,7 +79,7 @@ const ongoingProjects = [
     amount2425: '₹1,28,552',
     color: 'bg-orange-500',
     icon: Home,
-    image: img5,
+    image: img3,
     tag: 'Education',
     tagColor: 'bg-blue-100 text-blue-700',
     desc: 'Running a home for poor and orphan children entirely on donor contributions — providing free education, lodging, boarding, nutritious meals, and care without any government grant.',
@@ -93,7 +95,7 @@ const ongoingProjects = [
     amount2425: '₹49,715',
     color: 'bg-purple-600',
     icon: Stethoscope,
-    image: img3,
+    image: img5,
     tag: 'Health',
     tagColor: 'bg-green-100 text-green-700',
     desc: 'Mobile medical camps in Gunda and Kalmangi Panchayat with trained doctors. Rural Health Clinic with twice-weekly doctor visits, free medicines, and referral support.',
@@ -185,11 +187,11 @@ function fmtAmount(n) {
   return `₹${n.toLocaleString('en-IN')}`
 }
 
-// ─── MAIN COMPONENT ──────────────────────────────────────────────────────────
+// ─── MAIN COMPONENT ───────────────────────────────────
 export default function Programs() {
   const { type, subtype } = useParams()
 
-  // ── ONGOING PROJECTS LISTING ─────────────────────────────────────────────
+  // ── ONGOING PROJECTS LISTING ───────────────────
   if (type === 'ongoing' && !subtype) {
     return (
       <div>
@@ -577,28 +579,28 @@ export default function Programs() {
     education: {
       title: 'Education Programs', icon: BookOpen, color: 'bg-blue-500',
       image: img3, tag: 'Education',
-      desc: 'Samarpana has been working in education since 2003, starting with IEDC for disabled children and expanding to girl education, bridge courses, and ST hostel programmes.',
+      desc: 'Ashakira Orphanage and Poor Children Home.Organization is running Home for  Orphanage and Poor Children in Sindhanur  Block of Raichur Dist since 2017. At present 30 children’s will get free education, Loading and Boarding facilities.The project is not getting any kind grant from the Government or Non Government Sector and it will run by the organization and local Donors contribution',
       activities: [
         'Girls Hostel for ST Students — Gunda Village (Ministry of Tribal Affairs)',
         'Asha Kirana Home for Poor & Orphan Children — Sindhanur',
         'Integrated Education for Disabled Children (IEDC)',
         'Bridge Course Programme for Dropouts',
-        'KGBV School — 450 dropout girls educated (SSA)',
-        'Child Labour School — 500 children mainstreamed',
+        // 'KGBV School — 450 dropout girls educated (SSA)',
+        // 'Child Labour School — 500 children mainstreamed',
         'Tent School and Home Education Programmes',
       ],
       stats: [{ label: 'Years Active', value: '20+' }, { label: 'Children Educated', value: '2,000+' }, { label: 'Projects', value: '8+' }, { label: 'Funders', value: 'MOT, SSA, MHRD' }],
     },
     women: {
       title: 'Women Empowerment', icon: Heart, color: 'bg-pink-500',
-      image: img2, tag: 'Women',
-      desc: 'Empowering women through SHG formation, microfinance, vocational training, and market linkages since 2008.',
+      image: img20, tag: 'Women',
+      desc: 'Organization was conducted  MEDP Programme for Rural matured  SHG/JLG Members on Fashion Designing, Kundan work , patch work design, Lace stiching   with financial support by NABARD  Organization  selected 5 Villages namely Dadesugra,Kengal Kengal Camp , Uppal  around this area nearly 30  SHG/JLG groups are involving in tailoring and Fashion Designing works, the main adjectives of the project was to up gradation skills  of rural women’s and providing financial support and marketing to get the more profit in their activates. The programme includes Practical, Theory and Exposure visit to all participants. The major out comes of the project was  19 trained candidates linked with MFI/ Bank with Rs.8 Lack of Loan and 11 candidates were started Enterprizes with own found, total out 30 members 25 members started as micro enterprises at rural area and they earning more than Rs.1000 to 1500-00 per dat and monthly income is around of Rs.20000 to 25000 approximately',
       activities: [
-        'Micro Finance Programme — SHG/JLG loans with NABFINS & Bank of Baroda',
-        'MEDP Fashion Designing Training — NABARD funded',
-        'SJSY Programme — SC/ST Rural Women (Zilla Panchayat, Koppal)',
-        'Self-Help Group formation and capacity building',
-        'Vocational training: tailoring, Kundan work, food processing',
+        // 'Micro Finance Programme — SHG/JLG loans with NABFINS & Bank of Baroda',
+        // 'MEDP Fashion Designing Training — NABARD funded',
+        // 'SJSY Programme — SC/ST Rural Women (Zilla Panchayat, Koppal)',
+        // 'Self-Help Group formation and capacity building',
+        // 'Vocational training: tailoring, Kundan work, food processing',
         'Leadership development and financial literacy workshops',
       ],
       stats: [{ label: 'Women Benefitted', value: '5,000+' }, { label: 'Loan Amount/Year', value: '₹1 Cr+' }, { label: 'SHG/JLG Groups', value: '345' }, { label: 'Enterprises Started', value: '25+' }],
@@ -606,63 +608,91 @@ export default function Programs() {
     health: {
       title: 'Health Programs', icon: Stethoscope, color: 'bg-green-500',
       image: img1, tag: 'Health',
-      desc: 'Bringing essential healthcare to remote villages through mobile health camps, rural clinics, and HIV/AIDS prevention programmes.',
+      desc: 'Organization working with Karnataka State Aids Prevention Society in the year 2023-24 with KSAPS our organization is implementing Link Worker Scheme (LWS) at Vijapur District. The project focuses on intensifying and consolidating prevention services with a focus on HRGs and vulnerable population as well as expanding IEC services for high risk groups with a focus on behavior change and demand generation and increasing access and promoting comprehensive care, support and treatment for HIV/AIDS .In the project we are selected 100 villages with high risk  groups in HIV/AIDS.',
       activities: [
-        'Link Worker Scheme — 100 villages, Vijayapur District (KSAPS)',
-        'Health on Wheel Programme — Gunda GP, Maski Taluka',
-        'HIV/AIDS Awareness Campaigns — 50+ villages',
-        'Health camps: 88+ camps, 6,911+ patients served',
-        'Sankaryakarta Scheme — Haveri District (NIDC/KSCDC)',
-        'Blood donation camps, CBS camps, school awareness',
-        'Referral to ART centres — 41+ new cases linked',
+        'PRA, Line List.',
+        'Conducting IECactivites at Project area.',
+        'Advocacy activates, ICTC Referral',
+        'Organizing Health Camps',
+        'Organizing Mid media Programmes',
+        'PLHV /NGO Net working meetings ',
+        'Formation and strengthening of VV Groups at the project area. ',
+         'Awareness on Social Benefits Schemes',
+        'Distribution of condoms for HRGs  ',
+        
       ],
       stats: [{ label: 'Health Camps', value: '88+' }, { label: 'Patients Served', value: '6,900+' }, { label: 'Villages Covered', value: '100' }, { label: 'HIV Cases Linked to ART', value: '41' }],
+      lwsSection: {
+        description: 'Organization working with Karnataka State Aids Prevention Society in the year 2023-24 with KSAPS our organization is implementing Link Worker Scheme (LWS) at Vijapur District. The project focuses on intensifying and consolidating prevention services with a focus on HRGs and vulnerable population as well as expanding IEC services for high risk groups with a focus on behavior change and demand generation and increasing access and promoting comprehensive care, support and treatment for HIV/AIDS. In the project we are selected 100 villages with high risk groups in HIV/AIDS.',
+        targetGroups: [
+          'People Living with HIV (PLHIV)',
+          'Female Sex Worker (FSW)',
+          'Injection Drugs Users (IDUs)',
+          'Men with Men Sex worker (MSM)',
+          'Drivers and Truckers',
+          'Antenatal Women (ANC)',
+          'Tuberculosis Patients (TB)',
+        ],
+        objectives: [
+          'The scheme aims at building a rural community model to address the complex needs of rural HIV prevention, care and support requirements in selected geographies.',
+          'The scheme aims at reaching out to rural population who are vulnerable and are at risk of HIV/AIDS in a non-stigmatised enabling environment.',
+          'The scheme aims at improving access to information materials, commodities (condoms, needles/syringes) through collaborating with nearest TI or government health facilities, testing and treatment services ensuring there is no duplication of services or resources.',
+          'The scheme aims at improving linkage to other social and health benefits provided by other line departments in line with local norms, regulations suitable for vulnerable populations.',
+        ],
+        projectActivities: [
+          'PRA',
+          'Conducting IEC Activities at Project area',
+          'Line List',
+          'Advocacy activities',
+          'Organizing Health Camps',
+          'ICTC Referral',
+          'Organizing Mid media Programmes',
+          'PLHV/NGO Net working meetings',
+          'Awareness on Social Benefits Schemes',
+          'Distribution of condoms for HRGs',
+          'Formation and strengthening of VV Groups at the project area',
+        ],
+      },
     },
     skill: {
       title: 'Skill Development', icon: Wrench, color: 'bg-orange-500',
       image: img6, tag: 'Skill Dev',
-      desc: 'Equipping rural youth and women with marketable vocational skills for self-employment and sustainable livelihoods.',
+      desc: '. The professionals competence in the ever-evolving field of learning and development is determined by a wide range of skills required for training and development that support the growth of talent within a company. Finding and developing individuals potential is more than just a job; its an art that demands constant improvement and the ability to adapt to the dynamic business environment. ',
       activities: [
-        'MEDP Training Programme — NABFINS & NABARD',
-        'Fashion Designing Training — Sindhanur, Dadesugur Village',
-        'Tailoring, Dairy Development, Agarbatti Making',
-        'Entrepreneurship development and market linkage',
-        'Micro-finance facilitation for enterprise launch',
-        'Water Users Co-operative Society Training — 11,650 farmers',
-        'PRA & Training Programme — VFC Members',
+        '1.	To create opportunities for vulnerable groups, especially by giving technical assistance to enable diversification into more profitable product areas.',
+        '2.	Capacity Building in leadership, marketing etc.',
+        'To give new ideas, modern Technology and Government schemes for SHG/JLG Members at the project area',
+        
       ],
       stats: [{ label: 'Members Trained', value: '250+' }, { label: 'Enterprises Started', value: '25' }, { label: 'Daily Income', value: '₹500–1000' }, { label: 'Farmers Trained (WUCS)', value: '11,650' }],
     },
     community: {
       title: 'Community Development', icon: Home, color: 'bg-purple-500',
       image: img7, tag: 'Community',
-      desc: 'Strengthening rural communities through infrastructure, health services, agricultural support, and environmental programmes.',
+      desc: 'Health on Wheel programme. Organization is running this prograqmme last three year at Gunda  Grama panchyath and Kalmangi Panchyathi,With the help of the community contribution, organization conducted 30  medical camp in different villages.In this programme organization used for  well trained Doctors for all medical camps, and organization also distributed mediations for needy illness people with support by the PHC and other medical agency.Other than organization also running Rural Health Clinic in Hostel campus at Gunda village in this clinic Doctors visited two times in a week at the end of the year nearly 100  ST benefices got the benefit from this project',
       activities: [
-        'Health on Wheel — mobile medical camps in Gunda GP',
-        'Rural Health Clinic — twice-weekly doctors, Gunda Village',
-        'Hostel building construction (CSR: Tektronix India + MP/MLC Grant)',
-        'Water Users Co-operative Society Training — 11,650 farmers',
-        'Grameen Vikas Andolana — PRI, SHG & Youth training',
-        'MGNREGA — Training & action plan preparation',
-        'Bio-Fuel Promotion Project — environment awareness',
+      
+        'Hostel Building for Poor and orphanage children. The Organization was constructed Building (One Room) with financial supported by the Tektronix India Private Ltd Bengloure  under CSR activates the approximate estimated of Rs.880000-00 and another one Room was constructed by the Department under MP and MLC local found.( Rs. 3 Lakhs from MP Grant and  Rs.2 Lakh from MLC Grant)  total estimated amount of Rs.5 Lakhs.  ',
+        
+      
       ],
       stats: [{ label: 'Health Camps', value: '30+' }, { label: 'Farmers Trained', value: '11,650' }, { label: 'Gunda GP Villages', value: '14' }, { label: 'Community Members', value: '6,000+' }],
     },
-    linkworker: {
-      title: 'Link Worker Program', icon: Link2, color: 'bg-teal-500',
-      image: img5, tag: 'Health',
-      desc: 'Bridging marginalized communities and government health, welfare, and social services through trained Link Workers.',
-      activities: [
-        'LWS at 100 villages, Vijayapur District — KSAPS funded',
-        'Doorstep outreach to HRGs (FSW, IDUs, MSM, PLHIV)',
-        'IEC programmes, Jata programmes, school awareness',
-        'Health camps, CBS camps, blood donation camps',
-        'Referral to ICTC, hospitals, and ART centres',
-        'Social benefit linkage: Dhanashree, Rajivagandhi Vasati Yojane',
-        'Formation & strengthening of VV Groups',
-      ],
-      stats: [{ label: 'Villages Covered', value: '100' }, { label: 'Beneficiaries', value: '22,000+' }, { label: 'Health Camps', value: '88+' }, { label: 'ART-Linked Cases', value: '41' }],
-    },
+    // linkworker: {
+    //   title: 'Link Worker Program', icon: Link2, color: 'bg-teal-500',
+    //   image: img5, tag: 'Health',
+    //   desc: 'Bridging marginalized communities and government health, welfare, and social services through trained Link Workers.',
+    //   activities: [
+    //     'LWS at 100 villages, Vijayapur District — KSAPS funded',
+    //     'Doorstep outreach to HRGs (FSW, IDUs, MSM, PLHIV)',
+    //     'IEC programmes, Jata programmes, school awareness',
+    //     'Health camps, CBS camps, blood donation camps',
+    //     'Referral to ICTC, hospitals, and ART centres',
+    //     'Social benefit linkage: Dhanashree, Rajivagandhi Vasati Yojane',
+    //     'Formation & strengthening of VV Groups',
+    //   ],
+    //   stats: [{ label: 'Villages Covered', value: '100' }, { label: 'Beneficiaries', value: '22,000+' }, { label: 'Health Camps', value: '88+' }, { label: 'ART-Linked Cases', value: '41' }],
+    // },
   }
 
   const resolvedSubtype = subtype || (Object.keys(programTypes).includes(type) ? type : null)
@@ -742,7 +772,7 @@ export default function Programs() {
       <PageHero
         title="Programs & Services"
         breadcrumb={[{ label: 'Programs & Services' }]}
-        bgImage="https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=1600&q=80"
+        bgImage={banner}
       />
       <div className="max-w-7xl mx-auto px-4 py-16">
 
