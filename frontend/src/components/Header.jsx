@@ -33,7 +33,7 @@ const navItems = [
         ],
       },
       { label: 'Completed Projects', path: '/programs/completed' },
-      { label: 'Upcoming Projects', path: '/programs/upcoming' },
+      // { label: 'Upcoming Projects', path: '/programs/upcoming' },
       { label: 'Government Supported Projects', path: '/programs/government' },
     ],
   },
@@ -127,38 +127,46 @@ export default function Header() {
       <div className="bg-cream hidden md:block border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 flex items-stretch justify-between divide-x divide-gray-200">
 
+          {/* Tagline */}
+          <div className="flex items-center gap-3 py-3 px-6 justify-center">
+            <div className="text-center">
+              <p style={{ fontFamily: "'Noto Sans Kannada', sans-serif" }} className="text-sm font-bold text-primary leading-tight">ಕಾಯಕವೇ ಕೈಲಾಸ</p>
+              <p className="text-[11px] font-semibold text-accent leading-tight">Kayakave Kailasa</p>
+            </div>
+          </div>
+
           {/* Address */}
-          <div className="flex items-center gap-3 py-3 flex-1 justify-center">
+          <div className="flex items-center gap-3 py-3 px-6 justify-center">
             <div className="w-9 h-9 rounded-full border border-primary/30 flex items-center justify-center shrink-0">
               <MapPin size={15} className="text-primary" />
             </div>
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-wider leading-none mb-0.5">Our Address</p>
-              <p className="text-sm font-semibold text-primary leading-none">Raichur Dist, Karnataka — Pin 584128, India</p>
+              <p className="text-sm font-semibold text-primary leading-none whitespace-nowrap">Raichur Dist, Karnataka — Pin 584128, India</p>
             </div>
           </div>
 
           {/* Phone */}
-          <div className="flex items-center gap-3 py-3 flex-1 justify-center">
+          <div className="flex items-center gap-3 py-3 px-6 justify-center">
             <div className="w-9 h-9 rounded-full border border-primary/30 flex items-center justify-center shrink-0">
               <Phone size={15} className="text-primary" />
             </div>
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-wider leading-none mb-0.5">Call Us</p>
-              <a href="tel:9483700272" className="text-sm font-semibold text-primary hover:text-accent transition-colors leading-none">
+              <a href="tel:9483700272" className="text-sm font-semibold text-primary hover:text-accent transition-colors leading-none whitespace-nowrap">
                 +91 94837 00272
               </a>
             </div>
           </div>
 
           {/* Email */}
-          <div className="flex items-center gap-3 py-3 flex-1 justify-center">
+          <div className="flex items-center gap-3 py-3 px-6 justify-center">
             <div className="w-9 h-9 rounded-full border border-primary/30 flex items-center justify-center shrink-0">
               <Mail size={15} className="text-primary" />
             </div>
             <div>
               <p className="text-[10px] text-gray-400 uppercase tracking-wider leading-none mb-0.5">Email</p>
-              <a href="mailto:samarpana2000@gmail.com" className="text-sm font-semibold text-primary hover:text-accent transition-colors leading-none">
+              <a href="mailto:samarpana2000@gmail.com" className="text-sm font-semibold text-primary hover:text-accent transition-colors leading-none whitespace-nowrap">
                 samarpana2000@gmail.com
               </a>
             </div>

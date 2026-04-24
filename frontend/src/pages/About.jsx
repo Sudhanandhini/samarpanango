@@ -3,6 +3,8 @@ import PageHero from '../components/PageHero'
 import { Target, Eye, CheckCircle, Users, GitBranch, UserCheck, ArrowRight } from 'lucide-react'
 import img2 from '../assets/1.jpg';
 import banner from "../assets/banner.jpg"
+import founderImg from '../assets/founder.jpg'
+import geethaImg from '../assets/geetha.jpg'
 
 
 const sections = {
@@ -14,16 +16,11 @@ const sections = {
         <div>
           <h3 className="font-heading text-2xl font-bold text-primary mb-5">Who We Are</h3>
           <p className="text-gray-600 leading-relaxed mb-4">
-            Samarpan Abhiwradi Sansthan is a registered voluntary organization established on 05/10/2000–2001 under Section 13 of the Karnataka Societies Registration Act, 1960, with registration number SAU50/2000-2001, at Raichur. The organization is also registered under Section 12AA of the Income Tax Act, 1961 (2007–2008), and Section 80G (2010–2011), enabling donors to avail 50% tax exemption.
+            Samarpana Development Organization is a Registered Non-Government Organization at Sindhanur Block Raichur District Karnataka State, setup and run by a team of dedicated and passionate professionals. Organization is Registered under Karnataka State Society Act 1960 in the year 2000-2001.Organization activity  started with  Integrated Education for Disabled Children (IEDC) project with financial supported by the Ministry of Human Resource Development New Delhi (MHRD) in the year 2003.After that Organization implemented so many programmes with supported by the Central and State Government in the field of Education, Health, Environment and MEDP for youth and Women’s in rural and urban area. 
 
 
           </p>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            The organization is recognized by multiple government departments, including the Department of E-Governance, Women and Child Welfare, and Senior Citizens and Disabled Welfare. Since its inception, Samarpan Abhiwradi Sansthan has been actively engaged in social development initiatives.
-          </p>
-          <p className="text-gray-600 leading-relaxed">
-            Samarpana operates through a network of dedicated staff, volunteers, and community partners across Karnataka, reaching thousands of beneficiaries every year.
-          </p>
+        
         </div>
         <div>
           <img
@@ -129,25 +126,44 @@ const sections = {
       <div>
         <p className="text-gray-600 mb-10 max-w-2xl">Our dedicated leadership team steers Samarpana's mission with vision and integrity.</p>
 
-        {/* President & General Secretary — big cards */}
-        <div className="grid grid-cols-2 gap-5 mb-6">
-          {[
-            { role: 'President', name: 'Chandrappa', color: 'bg-primary' },
-            { role: 'General Secretary', name: 'Ramdas', color: 'bg-primary-light' },
-          ].map((item, i) => (
-            <div key={i} className={`${item.color} rounded-2xl p-6 flex flex-col items-center gap-3 shadow-md text-white`}>
-              <div className="w-20 h-20 rounded-full bg-white/20 border-4 border-white/40 overflow-hidden flex items-center justify-center">
-                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <circle cx="40" cy="30" r="16" fill="white" fillOpacity="0.75"/>
-                  <ellipse cx="40" cy="64" rx="24" ry="14" fill="white" fillOpacity="0.5"/>
-                </svg>
-              </div>
-              <div className="text-center">
-                <div className="font-bold text-lg leading-tight">{item.name}</div>
-                <div className="text-sm opacity-80 mt-0.5">{item.role}</div>
-              </div>
+        {/* President — big card */}
+        <div className="grid place-items-center mb-6">
+          <div className="bg-primary rounded-2xl p-6 flex flex-col items-center gap-3 shadow-md text-white w-64">
+            <div className="w-20 h-20 rounded-full bg-white/20 border-4 border-white/40 overflow-hidden flex items-center justify-center">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                <circle cx="40" cy="30" r="16" fill="white" fillOpacity="0.75"/>
+                <ellipse cx="40" cy="64" rx="24" ry="14" fill="white" fillOpacity="0.5"/>
+              </svg>
             </div>
-          ))}
+            <div className="text-center">
+              <div className="font-bold text-lg leading-tight">Chandrappa</div>
+              <div className="text-sm opacity-80 mt-0.5">President</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Founder Profile */}
+        <div className="bg-primary rounded-3xl p-8 mb-6 shadow-lg">
+          <h4 className="font-heading text-xl font-bold text-accent mb-6">Founder's Profile</h4>
+          <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+            <div className="flex-shrink-0 flex flex-col items-center gap-3">
+              <div className="w-48 h-56 rounded-2xl overflow-hidden border-4 border-accent shadow-xl">
+                <img src={founderImg} alt="Shri Ramdas" className="w-full h-full object-cover object-top" />
+              </div>
+              <span className="bg-accent text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-wide">Founder</span>
+            </div>
+            <div className="flex-1 text-white">
+              <h5 className="font-heading font-bold text-3xl text-white mb-1">Shri Ramdas</h5>
+              <p className="text-accent font-semibold text-base mb-5">General Secretary, Samarpana Development Organization</p>
+              <p className="text-gray-300 leading-relaxed text-base">
+                Shri Ramdas is the founder of the Samarpana Development Organization Sindhanur, established in the year 2000.
+                Mr. Ramdas completed his PG in Master of Social Work in the year 1998–99. After that he joined as Programme Officer
+                in Association of Rehabilitation of Disabled (ARD NGO), Koppal under Christian Childrens Fund (CCF) for the years 2003 to 2006.
+                He also worked in Janodhya Charitable Trust, Bengloure in the year 2007–08 as Branch Manager under the Micro Finance Project.
+                Subsequently he worked as Programme Officer under the MGNREGA Project at Taluka Panchayath, Sindhanur and Manvi from 2010 to 2014.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Programme Manager & Other Staff — small blocks */}
@@ -305,15 +321,18 @@ const sections = {
             { name: 'Kambale', designation: 'DRP' },
             { name: 'S.Kolli', designation: 'ZS' },
             { name: 'Santhosh Kambale', designation: 'ZS'},
-            { name: 'Geetha Kulkarni', designation: 'Accountant' },
+            { name: 'Geetha Kulkarni', designation: 'Accountant / M&E', image: geethaImg },
             { name: 'Mounish Nayak', designation: 'Project Manager' },
             { name: 'Kantemma', designation: 'Warden' },
             // { name: 'Raju V', designation: 'Community Mobilizer' },
             // { name: 'Suma K', designation: 'Social Worker' },
           ].map((m, i) => (
             <div key={i} className="bg-white border border-gray-100 rounded-2xl p-5 hover:shadow-md transition-shadow text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full mx-auto mb-3 flex items-center justify-center">
-                <span className="font-heading text-xl font-bold text-primary">{m.name[0]}</span>
+              <div className="w-32 h-32  mx-auto mb-3 overflow-hidden flex items-center justify-center bg-primary/10">
+                {m.image
+                  ? <img src={m.image} alt={m.name} className="w-full h-full object-cover object-top" />
+                  : <span className="font-heading text-xl font-bold text-primary">{m.name[0]}</span>
+                }
               </div>
               <h4 className="font-semibold text-gray-800 text-sm">{m.name}</h4>
               <p className="text-gray-500 text-xs">{m.designation}</p>

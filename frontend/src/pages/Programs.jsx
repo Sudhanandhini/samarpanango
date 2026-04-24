@@ -380,96 +380,96 @@ export default function Programs() {
   }
 
   // ── UPCOMING / FUTURE PLANS ───────────────────────────────────────────────
-  if (type === 'upcoming') {
-    return (
-      <div>
-        <PageHero
-          title="Future Plans & Upcoming Projects"
-          breadcrumb={[{ label: 'Programs / Services', path: '/programs' }, { label: 'Upcoming Projects' }]}
-          bgImage={banner}
-        />
-        <div className="max-w-7xl mx-auto px-4 py-16">
-          <ProjectTypeNav active="upcoming" />
+  // if (type === 'upcoming') {
+  //   return (
+  //     <div>
+  //       <PageHero
+  //         title="Future Plans & Upcoming Projects"
+  //         breadcrumb={[{ label: 'Programs / Services', path: '/programs' }, { label: 'Upcoming Projects' }]}
+  //         bgImage={banner}
+  //       />
+  //       <div className="max-w-7xl mx-auto px-4 py-16">
+  //         <ProjectTypeNav active="upcoming" />
 
-          {/* Intro */}
-          <div className="bg-primary rounded-3xl p-10 text-white mb-12">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-accent/20 text-accent text-sm font-semibold px-4 py-2 rounded-full mb-5">
-                <Star size={14} /> Future Vision 2025–2030
-              </div>
-              <h2 className="font-heading text-3xl font-bold mb-4">Our Future Plans</h2>
-              <p className="text-gray-300 leading-relaxed text-base">
-                Samarpana Development Organization is committed to expanding its reach and deepening its impact 
-                across Karnataka, with a special focus on Hyderabad-Karnataka districts including Raichur, Koppal, 
-                Bellary, Bijapur, Gulbarga, and Vijayanagar. The following programmes are planned for future 
-                implementation to contribute to the national development agenda.
-              </p>
-            </div>
-          </div>
+  //         {/* Intro */}
+  //         <div className="bg-primary rounded-3xl p-10 text-white mb-12">
+  //           <div className="max-w-3xl">
+  //             <div className="inline-flex items-center gap-2 bg-accent/20 text-accent text-sm font-semibold px-4 py-2 rounded-full mb-5">
+  //               <Star size={14} /> Future Vision 2025–2030
+  //             </div>
+  //             <h2 className="font-heading text-3xl font-bold mb-4">Our Future Plans</h2>
+  //             <p className="text-gray-300 leading-relaxed text-base">
+  //               Samarpana Development Organization is committed to expanding its reach and deepening its impact 
+  //               across Karnataka, with a special focus on Hyderabad-Karnataka districts including Raichur, Koppal, 
+  //               Bellary, Bijapur, Gulbarga, and Vijayanagar. The following programmes are planned for future 
+  //               implementation to contribute to the national development agenda.
+  //             </p>
+  //           </div>
+  //         </div>
 
-          {/* Future plan cards */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {futurePlans.map((plan, i) => (
-              <div key={i} className="bg-white border border-gray-100 rounded-3xl p-7 shadow-sm hover:shadow-md transition-shadow">
-                <div className={`w-12 h-12 ${plan.color} text-white rounded-2xl flex items-center justify-center mb-5`}>
-                  <plan.icon size={22} />
-                </div>
-                <div className="flex items-center gap-2 mb-2">
-                  <h3 className="font-heading text-lg font-bold text-primary">{plan.title}</h3>
-                  <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full font-medium shrink-0">Planned</span>
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed">{plan.desc}</p>
-              </div>
-            ))}
-          </div>
+  //         {/* Future plan cards */}
+  //         <div className="grid md:grid-cols-2 gap-6 mb-12">
+  //           {futurePlans.map((plan, i) => (
+  //             <div key={i} className="bg-white border border-gray-100 rounded-3xl p-7 shadow-sm hover:shadow-md transition-shadow">
+  //               <div className={`w-12 h-12 ${plan.color} text-white rounded-2xl flex items-center justify-center mb-5`}>
+  //                 <plan.icon size={22} />
+  //               </div>
+  //               <div className="flex items-center gap-2 mb-2">
+  //                 <h3 className="font-heading text-lg font-bold text-primary">{plan.title}</h3>
+  //                 <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full font-medium shrink-0">Planned</span>
+  //               </div>
+  //               <p className="text-gray-600 text-sm leading-relaxed">{plan.desc}</p>
+  //             </div>
+  //           ))}
+  //         </div>
 
-          {/* Focus districts */}
-          <div className="bg-cream rounded-3xl p-8 mb-12">
-            <h3 className="font-heading text-xl font-bold text-primary mb-6">Target Districts for Future Expansion</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {[
-                { dist: 'Raichur', note: 'Primary base & ongoing projects' },
-                { dist: 'Koppal', note: 'Tribal & rural development' },
-                { dist: 'Bellary', note: 'Education support programmes' },
-                { dist: 'Bijapur (Vijayapura)', note: 'LWS health programmes' },
-                { dist: 'Gulbarga (Kalaburagi)', note: 'Women empowerment' },
-                { dist: 'Vijayanagar', note: 'Agriculture & livelihood' },
-              ].map((d, i) => (
-                <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
-                  <div className="flex items-center gap-2 mb-1">
-                    <MapPin size={14} className="text-accent" />
-                    <span className="font-semibold text-primary text-sm">{d.dist}</span>
-                  </div>
-                  <span className="text-gray-500 text-xs">{d.note}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+  //         {/* Focus districts */}
+  //         <div className="bg-cream rounded-3xl p-8 mb-12">
+  //           <h3 className="font-heading text-xl font-bold text-primary mb-6">Target Districts for Future Expansion</h3>
+  //           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+  //             {[
+  //               { dist: 'Raichur', note: 'Primary base & ongoing projects' },
+  //               { dist: 'Koppal', note: 'Tribal & rural development' },
+  //               { dist: 'Bellary', note: 'Education support programmes' },
+  //               { dist: 'Bijapur (Vijayapura)', note: 'LWS health programmes' },
+  //               { dist: 'Gulbarga (Kalaburagi)', note: 'Women empowerment' },
+  //               { dist: 'Vijayanagar', note: 'Agriculture & livelihood' },
+  //             ].map((d, i) => (
+  //               <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+  //                 <div className="flex items-center gap-2 mb-1">
+  //                   <MapPin size={14} className="text-accent" />
+  //                   <span className="font-semibold text-primary text-sm">{d.dist}</span>
+  //                 </div>
+  //                 <span className="text-gray-500 text-xs">{d.note}</span>
+  //               </div>
+  //             ))}
+  //           </div>
+  //         </div>
 
-          {/* Image strip */}
-          <div className="grid grid-cols-3 gap-4 mb-12">
-            {[img2, img4, img6].map((src, i) => (
-              <img key={i} src={src} alt="Future plans" className="rounded-2xl h-48 w-full object-cover shadow" />
-            ))}
-          </div>
+  //         {/* Image strip */}
+  //         <div className="grid grid-cols-3 gap-4 mb-12">
+  //           {[img2, img4, img6].map((src, i) => (
+  //             <img key={i} src={src} alt="Future plans" className="rounded-2xl h-48 w-full object-cover shadow" />
+  //           ))}
+  //         </div>
 
-          {/* CTA */}
-          <div className="bg-accent rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-white font-heading text-2xl font-bold mb-2">Partner With Us</h3>
-              <p className="text-white/90 text-sm leading-relaxed max-w-xl">
-                Are you a government agency, CSR partner, or individual donor interested in co-implementing 
-                any of these future programmes? Reach out to us — together we can build sustainable change.
-              </p>
-            </div>
-            <Link to="/contact" className="bg-white text-accent font-semibold px-6 py-3 rounded-full text-sm flex items-center gap-2 hover:bg-gray-100 transition-colors shrink-0">
-              Contact Us <ArrowRight size={14} />
-            </Link>
-          </div>
-        </div>
-      </div>
-    )
-  }
+  //         {/* CTA */}
+  //         <div className="bg-accent rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+  //           <div>
+  //             <h3 className="text-white font-heading text-2xl font-bold mb-2">Partner With Us</h3>
+  //             <p className="text-white/90 text-sm leading-relaxed max-w-xl">
+  //               Are you a government agency, CSR partner, or individual donor interested in co-implementing 
+  //               any of these future programmes? Reach out to us — together we can build sustainable change.
+  //             </p>
+  //           </div>
+  //           <Link to="/contact" className="bg-white text-accent font-semibold px-6 py-3 rounded-full text-sm flex items-center gap-2 hover:bg-gray-100 transition-colors shrink-0">
+  //             Contact Us <ArrowRight size={14} />
+  //           </Link>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   )
+  // }
 
   // ── GOVERNMENT SUPPORTED / FINANCIAL HISTORY ──────────────────────────────
   if (type === 'government') {
@@ -579,29 +579,69 @@ export default function Programs() {
     education: {
       title: 'Education Programs', icon: BookOpen, color: 'bg-blue-500',
       image: img3, tag: 'Education',
-      desc: 'Ashakira Orphanage and Poor Children Home.Organization is running Home for  Orphanage and Poor Children in Sindhanur  Block of Raichur Dist since 2017. At present 30 children’s will get free education, Loading and Boarding facilities.The project is not getting any kind grant from the Government or Non Government Sector and it will run by the organization and local Donors contribution',
+      desc: (
+        <div className="space-y-7">
+          <div>
+            <h3 className="font-bold text-primary text-base mb-2 flex items-start gap-2">
+              <span className="bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded-full shrink-0 mt-0.5">1</span>
+              Ashakira Orphanage and Poor Children Home
+            </h3>
+            <p className="text-gray-600 leading-relaxed pl-7">
+              Organization is running Home for Orphanage and Poor Children in Sindhanur Block of Raichur Dist since 2017. At present 30 children's will get free education, Loading and Boarding facilities. <sapn className="text-gray-600 bold">The project is not getting any kind grant from the Government or Non Government Sector and it will run by the organization and local Donors contribution.</sapn>
+            </p>
+          </div>
+          <div>
+            <h3 className="font-bold text-primary text-base mb-2 flex items-start gap-2">
+              <span className="bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded-full shrink-0 mt-0.5">2</span>
+              ST GIA Girls Hostal
+              <span className="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full font-normal shrink-0 self-center">Project Id &amp; Acknowledgment No. KA/00001936/02/01</span>
+            </h3>
+            <p className="text-gray-600 leading-relaxed pl-7">
+              Ministry of Tribal Affairs (MOT) new Delhi has been continuing its Endeavour for Socio-economic development of Scheduled Tribes (STs) through supporting Schemes in education, livelihood and development of infrastructure in Tribal area. In this concerned Organization has been implanting Girls Hostel for ST Girls student at Gunda Village of Maski Taluka Raichur District Karnataka State. Maski Assembly constituency is one of the reserved Legislative Assembly constituencies for ST community of Karnataka State. In the year 2024-25, 91 students were admitted and get the free lodging and boarding facilities including Uniforms, Books and Stationery other essential services.
+            </p>
+          </div>
+        </div>
+      ),
       activities: [
-        'Girls Hostel for ST Students — Gunda Village (Ministry of Tribal Affairs)',
-        'Asha Kirana Home for Poor & Orphan Children — Sindhanur',
-        'Integrated Education for Disabled Children (IEDC)',
-        'Bridge Course Programme for Dropouts',
-        // 'KGBV School — 450 dropout girls educated (SSA)',
-        // 'Child Labour School — 500 children mainstreamed',
-        'Tent School and Home Education Programmes',
+        'Free boarding and lodging facilities for children',
+        'Transportation support for school attendance',
+        'Tution and academic support for school children',
+        'Skill development and extracurricular activities training',
+        'Culture & tranditional art education and practice',
       ],
       stats: [{ label: 'Years Active', value: '20+' }, { label: 'Children Educated', value: '2,000+' }, { label: 'Projects', value: '8+' }, { label: 'Funders', value: 'MOT, SSA, MHRD' }],
     },
     women: {
       title: 'Women Empowerment', icon: Heart, color: 'bg-pink-500',
       image: img20, tag: 'Women',
-      desc: 'Organization was conducted  MEDP Programme for Rural matured  SHG/JLG Members on Fashion Designing, Kundan work , patch work design, Lace stiching   with financial support by NABARD  Organization  selected 5 Villages namely Dadesugra,Kengal Kengal Camp , Uppal  around this area nearly 30  SHG/JLG groups are involving in tailoring and Fashion Designing works, the main adjectives of the project was to up gradation skills  of rural women’s and providing financial support and marketing to get the more profit in their activates. The programme includes Practical, Theory and Exposure visit to all participants. The major out comes of the project was  19 trained candidates linked with MFI/ Bank with Rs.8 Lack of Loan and 11 candidates were started Enterprizes with own found, total out 30 members 25 members started as micro enterprises at rural area and they earning more than Rs.1000 to 1500-00 per dat and monthly income is around of Rs.20000 to 25000 approximately',
+      desc: (
+        <div className="space-y-7">
+          <div>
+            <h3 className="font-bold text-primary text-base mb-2 flex items-start gap-2">
+              <span className="bg-pink-500 text-white text-xs font-bold px-2 py-0.5 rounded-full shrink-0 mt-0.5">1</span>
+              Micro Finance Programme
+            </h3>
+            <p className="text-gray-600 leading-relaxed pl-7">
+              Microfinance is a very broad term that refers to "financial services for poor and low-income clients offered by different types of service providers". In practice, the term is mostly used to refer to loans and other basic banking services to the poor who are excluded from the traditional commercial banking system, provided by so called microfinance institutions (MFIs). The microfinance movement is a large and growing movement. Organization is working as a Business Correspondent (BC) with NABARD Financial Service Ltd. Bengaluru. In this project we are providing Loan Facilities to the Rural and Urban women's through SHG/JLG. Since 2014, during the year we linked more than 120 JLG with amount of Rs. 1.41 Cr and at present 1.57 Cr outstanding amounts with 345 Accounts.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-bold text-primary text-base mb-2 flex items-start gap-2">
+              <span className="bg-pink-500 text-white text-xs font-bold px-2 py-0.5 rounded-full shrink-0 mt-0.5">2</span>
+              Micro Enterprises Development Programme (MEDP)
+            </h3>
+            <p className="text-gray-600 leading-relaxed pl-7">
+              Organization was conducted MEDP Programme for Rural matured SHG/JLG Members on <strong>Fashion Designing, Kundan work, patch work design, Lace stiching with financial support by NABARD.</strong> Organization selected 5 Villages namely Dadesugra, Kengal Kengal Camp, Uppal. Around this area nearly 30 SHG/JLG groups are involving in tailoring and Fashion Designing works. The main adjectives of the project was to up gradation skills of rural women's and providing financial support and marketing to get the more profit in their activates. The programme includes Practical, Theory and Exposure visit to all participants. The major out comes of the project was 19 trained candidates linked with MFI/Bank with Rs.8 Lakh of Loan and 11 candidates were started Enterprises with own fund. Total out 30 members, 25 members started as micro enterprises at rural area and they earning more than Rs.1000 to 1500-00 per day and monthly income is around of Rs.20000 to 25000 approximately.
+            </p>
+          </div>
+        </div>
+      ),
       activities: [
-        // 'Micro Finance Programme — SHG/JLG loans with NABFINS & Bank of Baroda',
-        // 'MEDP Fashion Designing Training — NABARD funded',
-        // 'SJSY Programme — SC/ST Rural Women (Zilla Panchayat, Koppal)',
-        // 'Self-Help Group formation and capacity building',
-        // 'Vocational training: tailoring, Kundan work, food processing',
-        'Leadership development and financial literacy workshops',
+       
+        'Loan facilities for MEDP',
+        'Exposure Visits',
+        'Marketing ',
+        'Skill development training ',
       ],
       stats: [{ label: 'Women Benefitted', value: '5,000+' }, { label: 'Loan Amount/Year', value: '₹1 Cr+' }, { label: 'SHG/JLG Groups', value: '345' }, { label: 'Enterprises Started', value: '25+' }],
     },
@@ -672,11 +712,37 @@ export default function Programs() {
       desc: 'Health on Wheel programme. Organization is running this prograqmme last three year at Gunda  Grama panchyath and Kalmangi Panchyathi,With the help of the community contribution, organization conducted 30  medical camp in different villages.In this programme organization used for  well trained Doctors for all medical camps, and organization also distributed mediations for needy illness people with support by the PHC and other medical agency.Other than organization also running Rural Health Clinic in Hostel campus at Gunda village in this clinic Doctors visited two times in a week at the end of the year nearly 100  ST benefices got the benefit from this project',
       activities: [
       
-        'Hostel Building for Poor and orphanage children. The Organization was constructed Building (One Room) with financial supported by the Tektronix India Private Ltd Bengloure  under CSR activates the approximate estimated of Rs.880000-00 and another one Room was constructed by the Department under MP and MLC local found.( Rs. 3 Lakhs from MP Grant and  Rs.2 Lakh from MLC Grant)  total estimated amount of Rs.5 Lakhs.  ',
-        
+        'Mobile health clinic services in 8 villeges ',
+        'Organizing health camps with qualified doctors',
+        'Distribution of medicines',
+       
       
       ],
       stats: [{ label: 'Health Camps', value: '30+' }, { label: 'Farmers Trained', value: '11,650' }, { label: 'Gunda GP Villages', value: '14' }, { label: 'Community Members', value: '6,000+' }],
+    },
+    csr: {
+      title: 'CSR Activities', icon: Building2, color: 'bg-indigo-600',
+      image: img3, tag: 'CSR',
+      desc: (
+        <div className="space-y-7">
+          <div>
+            <h3 className="font-bold text-primary text-base mb-2 flex items-start gap-2">
+              <span className="bg-indigo-600 text-white text-xs font-bold px-2 py-0.5 rounded-full shrink-0 mt-0.5">1</span>
+              Hostel Building for Poor and Orphanage Children
+            </h3>
+            <p className="text-gray-600 leading-relaxed pl-7">
+              The Organization constructed a Building (One Room) with financial support by <strong>Tektronix India Private Ltd. Bengaluru</strong> under CSR activities, with an approximate estimated cost of Rs. 8,80,000. Another room was constructed by the Department under MP and MLC local fund — Rs. 3 Lakhs from MP Grant and Rs. 2 Lakhs from MLC Grant — with a total estimated amount of Rs. 5 Lakhs.
+            </p>
+          </div>
+        </div>
+      ),
+      activities: [
+        'Construction of hostel building rooms with CSR funding (Tektronix India Pvt. Ltd.)',
+        'MP & MLC grant-funded room construction for poor and orphan children',
+        'Providing shelter, lodging and boarding facilities to beneficiary children',
+        'Community partnership for infrastructure development',
+      ],
+      stats: [{ label: 'CSR Partner', value: 'Tektronix' }, { label: 'CSR Amount', value: '₹8.8 L' }, { label: 'Govt. Grant', value: '₹5 L' }, { label: 'Children Housed', value: '48+' }],
     },
     // linkworker: {
     //   title: 'Link Worker Program', icon: Link2, color: 'bg-teal-500',
@@ -722,7 +788,10 @@ export default function Programs() {
                 <prog.icon size={24} className="text-white" />
               </div>
               <h2 className="font-heading text-3xl font-bold text-primary mb-5">{prog.title}</h2>
-              <p className="text-gray-600 leading-relaxed mb-8">{prog.desc}</p>
+              {typeof prog.desc === 'string'
+                ? <p className="text-gray-600 leading-relaxed mb-8">{prog.desc}</p>
+                : <div className="mb-8">{prog.desc}</div>
+              }
               <h3 className="font-semibold text-primary mb-4">Key Activities</h3>
               <ul className="space-y-3">
                 {prog.activities.map((a, i) => (
@@ -747,11 +816,11 @@ export default function Programs() {
           </div>
 
           {/* Image strip */}
-          <div className="grid grid-cols-3 gap-3 mb-8">
+          {/* <div className="grid grid-cols-3 gap-3 mb-8">
             {[img2, img4, img6].map((src, i) => (
               <img key={i} src={src} alt="Program" className="rounded-2xl h-36 w-full object-cover shadow-sm" />
             ))}
-          </div>
+          </div> */}
 
           {/* CTA */}
           <div className="bg-primary rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -877,7 +946,7 @@ function ProjectTypeNav({ active }) {
   const navItems = [
     { label: 'Ongoing Projects', path: '/programs/ongoing', key: 'ongoing' },
     { label: 'Completed Projects', path: '/programs/completed', key: 'completed' },
-    { label: 'Upcoming Projects', path: '/programs/upcoming', key: 'upcoming' },
+    // { label: 'Upcoming Projects', path: '/programs/upcoming', key: 'upcoming' },
     { label: 'Govt. Supported', path: '/programs/government', key: 'government' },
   ]
   return (
